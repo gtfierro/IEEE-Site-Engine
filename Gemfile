@@ -5,8 +5,13 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'web-app-theme'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+group :test, :development do
+  gem 'sqlite3'
+end
 
-gem 'sqlite3'
+group :production do
+  gem 'pg'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'
