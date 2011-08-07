@@ -1,0 +1,43 @@
+<% recent_posts.each do |p| %>
+	<h3><%= p.title %></h3>
+	<%= p.created_at.strftime("%a %d %b - %I:%M %p")%>
+	<p>
+		<%= p.content %>
+	</p>
+	<% if current_user %>
+		<%= link_to "Edit", edit_post_path(p) %>
+		<%= link_to "Destroy", post_path(p), :method => "delete" %>
+	<% end %>
+<% end %>
+
+
+<% content_for :sidebar do %>
+	<% if not current_user %>
+		<%= render 'sessions/form' %>
+	<% end %>
+	<% upcoming_events.each do |e| %>
+		<h4><%= e.title %></h4>
+		<p>
+			<b><%= e.location %></b>
+		</p>
+		<p>
+			<%= e.description %>
+		</p>
+		<p>
+			<b><%= e.event_start.strftime("Start: %a %d %b - %I:%M %p") %></b>
+			<br />
+			<b><%= e.event_end.strftime("End: %a %d %b - %I:%M %p") %></b>
+		</p>
+		<% if current_user %>
+			<%= link_to "Edit", edit_event_path(e) %>
+			<%= link_to "Destroy", event_path(e), :method => "delete" %>
+		<% end %>
+	<% end %>
+	<br />
+	<br />
+	<% if current_user %>
+		<%= link_to 'Create New Event', new_event_path %>
+		<br />
+		<%= link_to 'Create New Post', new_post_path %>
+	<% end %>
+<% end %>

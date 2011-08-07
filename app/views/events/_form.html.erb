@@ -1,0 +1,34 @@
+<%= form_for @e,  :html => { :multipart => true } do |f| %>
+  <% if @e.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @e.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+	<p>
+		<%= f.label :event_start %><br />
+		<%= f.datetime_select :event_start %>
+	</p>
+	<p>
+		<%= f.label :event_end %><br />
+		<%= f.datetime_select :event_end %>
+	</p>
+
+  <p class="button"><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,41 @@
+IEEE Site Spec
+
+Home page:
+
+Nav bar at top:
+	-Home
+	-Events
+	-Industrial Relations
+	-H.O.P.E.
+	-About IEEE
+	-Login
+	
+Upcoming Events:
+	-link from event model
+	
+Content:
+	-"post" model?
+
+
+*Models needed*
+-events
+-user (officers have accounts?)
+-posts - blog-ish
+
+User:
+-email
+-username
+-password_hash
+-password_salt
+
+Event:
+-datetime start (dd/mm/yyyy hh:mm)
+-datetime end
+-title
+-location
+-description
+-volunteers (AR model assoc with users?)
+
+Post:
+-title
+-content

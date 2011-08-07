@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IEEE</title>
+  <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/djime-cerulean/style", "web-app-theme/override", :cache => true %>
+  <%= javascript_include_tag :defaults, :cache => true %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><a href="/">IEEE</a></h1>
+      <div id="user-navigation">
+        <ul class="wat-cf">
+					<% if current_user %>
+          	<li><a href="/home"><%= t("web-app-theme.home", :default => "Home") %></a></li>
+          	<li><a href="/logout" class="logout"><%= t("web-app-theme.logout", :default => "Logout") %></a></li>
+					<% else %>
+						<li><a href="/login" class="login"><%= t("web-app-theme.login", :default => "Login")%></a></li>
+						<li><a href="/signup" class="login"><%= t("web-app-theme.login", :default => "Signup")%></a></li>
+					<% end %>
+        </ul>
+      </div>
+      <div id="main-navigation">
+        <ul class="wat-cf"></ul>
+      </div>
+    </div>    
+    <div id="wrapper" class="wat-cf">
+      <div class="flash">
+        <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
+          </div>
+        <% end -%>
+      </div>
+      <div id="main">
+        <%= yield %>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; <%= Time.now.year %> UC Berkeley IEEE.</p>
+          </div>      
+        </div>
+      </div>
+      <div id="sidebar">
+        <%= yield :sidebar %>
+      </div>
+    </div>    
+  </div>
+</body>
+</html>

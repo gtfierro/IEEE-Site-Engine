@@ -1,0 +1,36 @@
+class EventsController < ApplicationController
+  
+  def new
+    @e = Event.new
+  end
+  
+  def create
+    @e = Event.new(params[:event])
+    if @e.save
+      redirect_to home_url, :notice => "Event creation successful for " + @e.title
+    else
+      redirect_to home_url, :notice => @e.errors
+    end
+  end
+  
+  def edit
+    @e = Event.find(params[:id])
+  end
+  
+  def update
+    @e = Event.find(params[:id])
+    if @e.update_attributes(params[:event])
+      notice = "Update successful!"
+    else
+      notice = "Update was not successful"
+    end
+    redirect_to home_url, :notice => notice
+  end
+  
+  def destroy
+    @e = Event.find(params[:id])
+    @e.destroy
+    redirect_to home_url, :notice => "Event destroyed!"
+  end
+
+end
