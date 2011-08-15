@@ -29,6 +29,8 @@ class EventsController < ApplicationController
     redirect_to home_url, :notice => "Signup for "+@e.title+" successful"
   end
   
+
+  
   def update
     @e = Event.find(params[:id])
     if @e.update_attributes(params[:event])

@@ -12,7 +12,7 @@
 
 
 <% content_for :sidebar do %>
-	<% if not current_user %>
+	<% if not current_user%>
 		<%= render 'sessions/form' %>
 	<% end %>
 	<% upcoming_events.each do |e| %>

@@ -11,4 +11,13 @@
 	<b><%= @e.event_end.strftime("End: %a %d %b - %I:%M %p") %></b>
 </p>
 
+<h4>Attending</h4>
+
+<% @e.users.each do |u| %>
+	<p>
+		<% s = u.signups.where(:event_id => @e.id).first%>
+		<%= link_to u.email, user_signup_mark_path(u, s.id), :method => "post" %> - Attended: <%= s.attended %>
+	</p>
+<% end %>
+
 <%= link_to 'Back', edit_user_path(current_user) %>

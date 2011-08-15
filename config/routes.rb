@@ -10,7 +10,11 @@ Ieee::Application.routes.draw do
   
   root :to => "users#home"
   
-  resources :users
+  resources :users do
+    resources :signups do
+      post "mark" => "signups#mark"
+    end
+  end
   resources :sessions  
   resources :events do
     resources :signups

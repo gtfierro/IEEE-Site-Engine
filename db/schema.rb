@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110814231930) do
+ActiveRecord::Schema.define(:version => 20110815001253) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20110814231930) do
     t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "attended"
   end
 
   create_table "users", :force => true do |t|

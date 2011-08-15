@@ -3,7 +3,7 @@
 <% current_user.signups.each do |s| %>
 	<% e = Event.find(s.event_id) %>
 	<p>
-		<%= link_to e.title, event_path(e) %> : <%= e.event_start.strftime("Start: %a %d %b - %I:%M %p") %> : <%= s.role %>
+		<%= link_to e.title, event_path(e) %> : <%= e.event_start.strftime("Start: %a %d %b - %I:%M %p") %> : Role: <%= s.role %> : Attended: <%= s.attended %>
 	</p>
 <% end %>
 
