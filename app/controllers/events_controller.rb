@@ -17,6 +17,18 @@ class EventsController < ApplicationController
     @e = Event.find(params[:id])
   end
   
+  def show
+    @e = Event.find(params[:id])
+  end
+  
+  def signup
+    @e = Event.find(params[:event_id])
+    @e.users << current_user
+    @e.save
+    puts @e.users
+    redirect_to home_url, :notice => "Signup for "+@e.title+" successful"
+  end
+  
   def update
     @e = Event.find(params[:id])
     if @e.update_attributes(params[:event])

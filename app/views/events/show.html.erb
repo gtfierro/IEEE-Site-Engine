@@ -1,0 +1,14 @@
+<h4><%= @e.title %></h4>
+<p>
+	<b><%= @e.location %></b>
+</p>
+<p>
+	<%= @e.description %>
+</p>
+<p>
+	<b><%= @e.event_start.strftime("Start: %a %d %b - %I:%M %p") %></b>
+	<br />
+	<b><%= @e.event_end.strftime("End: %a %d %b - %I:%M %p") %></b>
+</p>
+
+<%= link_to 'Back', edit_user_path(current_user) %>

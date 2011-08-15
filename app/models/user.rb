@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
   validates_presence_of     :email
   validates_uniqueness_of   :email,
                             :on => :create
+                            
+  has_many  :events, :through => :signups
+  has_many  :signups
   
   def self.authenticate(email, password)
     user = find_by_email(email)

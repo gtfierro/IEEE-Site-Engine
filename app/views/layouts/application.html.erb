@@ -14,6 +14,7 @@
         <ul class="wat-cf">
 					<% if current_user %>
           	<li><a href="/home"><%= t("web-app-theme.home", :default => "Home") %></a></li>
+						<li><a href="/users/edit"><%= t("web-app-theme.logout", :default => "User Settings")%></a></li>
           	<li><a href="/logout" class="logout"><%= t("web-app-theme.logout", :default => "Logout") %></a></li>
 					<% else %>
 						<li><a href="/login" class="login"><%= t("web-app-theme.login", :default => "Login")%></a></li>
