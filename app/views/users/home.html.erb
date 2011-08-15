@@ -28,7 +28,7 @@
 			<br />
 			<b><%= e.event_end.strftime("End: %a %d %b - %I:%M %p") %></b>
 		</p>
-		<% if current_user %>
+		<% if current_user and User.exists? %>
 			<%= link_to "Edit", edit_event_path(e) %>
 			<%= link_to "Destroy", event_path(e), :method => "delete" %>
 			<%= link_to "Sign Up", new_event_signup_path(e) %>
