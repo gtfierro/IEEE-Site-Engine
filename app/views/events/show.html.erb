@@ -16,7 +16,11 @@
 <% @e.users.each do |u| %>
 	<p>
 		<% s = u.signups.where(:event_id => @e.id).first%>
-		<%= link_to u.email, user_signup_mark_path(u, s.id), :method => "post" %> - Attended: <%= s.attended %>
+		<% if has_permission %>
+			<%= link_to u.email, user_signup_mark_path(u, s.id), :method => "post" %> - Attended: <%= s.attended %>
+		<% else %>
+			<%= u.email %> - Attended: <%= s.attended%>
+		<% end %>
 	</p>
 <% end %>
 

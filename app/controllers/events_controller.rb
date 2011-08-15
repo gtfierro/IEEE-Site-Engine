@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   
+
+  
   def new
     @e = Event.new
   end

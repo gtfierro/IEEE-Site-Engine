@@ -1,8 +1,16 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  helper_method :current_user, :upcoming_events, :recent_posts
+  helper_method :current_user, :upcoming_events, :recent_posts, :has_permission
   private
+  
+  def has_permission
+    unless current_user.id == 1
+      redirect_to home_url, :notice => "Permission Denied" unless request.request_uri.include? "events"
+      return false
+    end
+    return true
+  end
   
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

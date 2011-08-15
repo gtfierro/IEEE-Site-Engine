@@ -1,5 +1,7 @@
 class SignupsController < ApplicationController
   
+  before_filter :has_permission, :only => :mark
+  
   def new
     @signup = Signup.new
     @e = Event.find(params[:event_id])
@@ -24,9 +26,13 @@ class SignupsController < ApplicationController
   def mark
     @u = User.find(params[:user_id])
     @s = Signup.find(params[:signup_id])
-    @s.attended = true
+    if @s.attended == true
+      @s.attended = false
+    else
+      @s.attended = true
+    end
     @s.save
-    redirect_to event_path(@s.event), :notice => @u.email + "marked as attended"
+    redirect_to event_path(@s.event), :notice => "Changed attended to "+@s.attended.to_s+" for "+@u.email
     
   end
   

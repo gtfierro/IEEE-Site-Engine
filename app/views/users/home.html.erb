@@ -16,7 +16,7 @@
 		<%= render 'sessions/form' %>
 	<% end %>
 	<% upcoming_events.each do |e| %>
-		<h4><%= e.title %></h4>
+		<h4><%= link_to e.title, event_path(e) %></h4>
 		<p>
 			<b><%= e.location %></b>
 		</p>
