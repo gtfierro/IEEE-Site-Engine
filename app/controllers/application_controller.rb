@@ -5,11 +5,14 @@ class ApplicationController < ActionController::Base
   private
   
   def has_permission
-    unless current_user.id == 1
-      redirect_to home_url, :notice => "Permission Denied" unless request.request_uri.include? "events"
-      return false
+    if current_user
+      unless current_user.id == 1
+        redirect_to home_url, :notice => "Permission Denied" unless request.request_uri.include? "events"
+        return false
+      end
+      return true
     end
-    return true
+    return false
   end
   
   def current_user

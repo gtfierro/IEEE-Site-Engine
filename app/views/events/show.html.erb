@@ -12,16 +12,27 @@
 </p>
 
 <h4>Attending</h4>
-
-<% @e.users.each do |u| %>
+<% if has_permission %>
 	<p>
-		<% s = u.signups.where(:event_id => @e.id).first%>
-		<% if has_permission %>
-			<%= link_to u.email, user_signup_mark_path(u, s.id), :method => "post" %> - Attended: <%= s.attended %>
-		<% else %>
-			<%= u.email %> - Attended: <%= s.attended%>
-		<% end %>
+		You can click the email addresses to change the "attended" flag
 	</p>
 <% end %>
 
-<%= link_to 'Back', edit_user_path(current_user) %>
+
+<% if Signup.exists? %>
+	<% @e.users.each do |u| %>
+		<p>
+			<% s = u.signups.where(:event_id => @e.id).first%>
+			<% if has_permission %>
+				<%= link_to u.email, user_signup_mark_path(u, s.id), :method => "post" %> - Attended: <%= s.attended %>
+			<% else %>
+				<%= u.email %> - Attended: <%= s.attended%>
+			<% end %>
+		</p>
+	<% end %>
+<% end %>
+<% if current_user %>
+	<%= link_to 'Edit', edit_event_path %>
+<% end %>
+
+<%= link_to 'Back', :back %>
