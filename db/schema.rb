@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20110815001253) do
   create_table "events", :force => true do |t|
     t.string   "title"
     t.string   "location"
-    t.text   "description"
+    t.string   "description"
     t.datetime "event_start"
     t.datetime "event_end"
     t.datetime "created_at"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20110815001253) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
-    t.text   "content"
+    t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
