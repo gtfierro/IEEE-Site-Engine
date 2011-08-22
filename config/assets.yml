@@ -1,0 +1,13 @@
+embed_assets: off
+
+javascripts:
+  common:
+    - public/javascripts/jquery.min.js
+    - public/javascripts/jquery_ujs.js
+    - public/javascripts/application.js
+    
+stylesheets:
+  common:
+    - public/stylesheets/sky/sky.css
+    - public/stylesheets/sky/navigation.css
+    

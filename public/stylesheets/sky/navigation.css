@@ -1,0 +1,57 @@
+#navigation {
+  padding: 0px;
+  margin: 70px 20px 0px 0px;
+  list-style-type: none;
+  float: right;
+  display: block;
+  width: 537px;
+}
+#navigation a {
+  background: url("../../images/sky/navigation.png");
+  height: 11px;
+  text-indent: -9000px;
+  float: left;
+  display: block;
+}
+#navigation a.link1 {
+  width: 51px;
+  background-position: 0px 0px;
+}
+#navigation a.link1:hover {
+  background-position: 0px 11px;
+}
+#navigation a.link2 {
+  width: 75px;
+  background-position: -52px 0px;
+}
+#navigation a.link2:hover {
+  background-position: -52px 11px;
+}
+#navigation a.link3 {
+  width: 186px;
+  background-position: -128px 0px;
+}
+#navigation a.link3:hover {
+  background-position: -128px 11px;
+}
+#navigation a.link4 {
+  width: 65px;
+  background-position: -316px 0px;
+}
+#navigation a.link4:hover {
+  background-position: -316px 11px;
+}
+#navigation a.link5 {
+  width: 102px;
+  background-position: -383px 0px;
+}
+#navigation a.link5:hover {
+  background-position: -383px 11px;
+}
+#navigation a.link6 {
+  width: 52px;
+  background-position: -485px 0px;
+}
+#navigation a.link6:hover {
+  background-position: -485px 11px;
+}

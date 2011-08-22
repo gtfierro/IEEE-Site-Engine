@@ -1,0 +1,43 @@
+#!/bin/bash
+
+#Get necessary prereqs
+sudo apt-get install git-core
+sudo apt-get install openjdk-6-jdk
+sudo apt-get install build-essentials
+sudo apt-get install ruby1.9.1
+sudo apt-get install ruby1.9.1-dev
+sudo apt-get install libpq-dev
+sudo apt-get install sqlite3
+sudo apt-get install libsqlite3-dev
+sudo apt-get install curl
+sudo apt-get install realpath
+
+#Create aliases
+pushd /usr/bin
+sudo ln -s erb1.9.1 erb
+sudo ln -s gem1.9.1 gem
+sudo ln -s irb1.9.1 irb
+sudo ln -s rake1.9.1 rake
+sudo ln -s rdoc1.9.1 rdoc
+sudo ln -s ruby1.9.1 ruby
+sudo ln -s testrb1.9.1 testrb
+popd
+
+#Install essential gems
+sudo gem install heroku
+sudo gem install rails
+sudo gem install bundle
+
+#Install node, this step is kind of a waste...
+curl -O http://nodejs.org/dist/node-v0.4.11.tar.gz
+tar -xvzf node-v0.4.11.tar.gz
+pushd node-v0.4.11
+./configure
+make
+sudo make install
+popd
+
+#Install the less compiler
+curl http://npmjs.org/install.sh | sudo sh
+npm install less
+

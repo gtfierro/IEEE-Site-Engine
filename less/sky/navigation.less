@@ -1,0 +1,49 @@
+@import "globals";
+
+.set_navigation(@x_pos, @width) {
+    width: @width;
+    background-position: -@x_pos 0px;
+    &:hover {
+        background-position: -@x_pos 11px;
+    }
+}
+ 
+#navigation {
+    padding: 0px;
+    margin: 70px 20px 0px 0px;
+    list-style-type: none;
+    .floater(block, right);
+    width: 537px;
+
+    a {
+        background: url("../../images/sky/navigation.png");
+        height: 11px;
+        text-indent: -9000px; 
+        .floater(block, left);
+
+        &.link1 {
+            .set_navigation(0px, 51px);
+        }
+
+        &.link2 {
+            .set_navigation(52px, 75px);
+        }
+
+        &.link3 {
+            .set_navigation(128px, 186px);
+        }
+
+        &.link4 {
+            .set_navigation(316px, 65px);
+        }
+
+        &.link5 {
+            .set_navigation(383px, 102px);
+        }
+        
+        &.link6 {
+            .set_navigation(485px, 52px);
+        }
+    }
+}
+

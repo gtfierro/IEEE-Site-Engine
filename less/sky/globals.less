@@ -1,0 +1,19 @@
+//Constants
+@header_height: 230px;
+@content_width: 920px;
+
+@navigation_height: 120px;
+
+
+//Mixins
+.centered(@display_type: block) {
+    margin-left: auto;
+    margin-right: auto;
+    display: @display_type;
+}
+
+.floater(@display_type: block, @direction: left) {
+    float: @direction;
+    display: @display_type;
+}
+
