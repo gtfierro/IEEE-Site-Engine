@@ -29,7 +29,7 @@
 				<div id="logo"></div>
 				<ul id="navigation">
 					<li>
-						<a href="#" class="link1">HOME</a>
+						<a href="/home" class="link1">HOME</a>
 					</li>
 					<li>
 						<a href="#" class="link2">EVENTS</a>
@@ -44,7 +44,11 @@
 						<a href="#" class="link5">ABOUT IEEE</a>
 					</li>
 					<li>
-						<a href="/login" class="link6">LOGIN</a>
+						<% if User.exists? and current_user %>
+							<a href="/logout" class="link_logout">LOGOUT</a>
+						<% else %>
+							<a href="/login" class="link_login">LOGIN</a>
+						<% end %>
 					</li>
 				</ul>
 			</div>

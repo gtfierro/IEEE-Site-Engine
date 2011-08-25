@@ -1,11 +1,11 @@
 @import "globals";
 
-.set_navigation(@x_pos, @width, @padding) {
+.set_navigation(@x_pos, @width, @padding, @level: 1) {
     width: @width;
     padding-right: @padding;
-    background-position: -@x_pos 0px;
+    background-position: -@x_pos -((2 * @navigation_layer_height) * (@level - 1));
     &:hover {
-        background-position: -@x_pos -12px;
+        background-position: -@x_pos -(@navigation_layer_height * (2 * @level - 1));
     }
 }
  
@@ -14,7 +14,7 @@
     margin: 70px 20px 0px 0px;
     list-style-type: none;
     .floater(block, right);
-    width: 558px;
+    width: @navigation_width;
 
     a {
         background: url("../../images/sky/navigation.png");
@@ -27,7 +27,7 @@
         }
 
         &.link2 {
-            .set_navigation(63px, 54px, 21px);
+            .set_navigation(63px, 54px, 21px) 
         }
 
         &.link3 {
@@ -42,8 +42,12 @@
             .set_navigation(391px, 84px, 24px);
         }
         
-        &.link6 {
+        &.link_login {
             .set_navigation(499px, 59px, 0px);
+        }
+        
+        &.link_logout {
+            .set_navigation(499px, 59px, 0px, 2);
         }
     }
 }

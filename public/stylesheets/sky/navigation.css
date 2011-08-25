@@ -53,11 +53,19 @@
 #navigation a.link5:hover {
   background-position: -391px -12px;
 }
-#navigation a.link6 {
+#navigation a.link_login {
   width: 59px;
   padding-right: 0px;
   background-position: -499px 0px;
 }
-#navigation a.link6:hover {
+#navigation a.link_login:hover {
   background-position: -499px -12px;
+}
+#navigation a.link_logout {
+  width: 59px;
+  padding-right: 0px;
+  background-position: -499px -24px;
+}
+#navigation a.link_logout:hover {
+  background-position: -499px -36px;
 }
