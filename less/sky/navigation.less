@@ -8,7 +8,23 @@
         background-position: -@x_pos -(@navigation_layer_height * (2 * @level - 1));
     }
 }
- 
+
+#user_nav {
+    a {
+		float: right;
+		margin-right: 10px;
+		padding-top: 5px;
+		
+		&.link_login {
+            .set_navigation(499px, 59px, 20px);
+        }
+        
+        &.link_logout {
+            .set_navigation(499px, 59px, 20px, 2);
+        }
+	}
+} 
+
 #navigation {
     padding: 0px;
     margin: 70px 20px 0px 0px;
@@ -39,16 +55,96 @@
         }
 
         &.link5 {
-            .set_navigation(391px, 84px, 24px);
+            .set_navigation(391px, 70px, 24px);
         }
-        
-        &.link_login {
-            .set_navigation(499px, 59px, 0px);
-        }
-        
-        &.link_logout {
-            .set_navigation(499px, 59px, 0px, 2);
-        }
+
     }
 }
 
+.event_title, .event_location, .event_description, .event_time {
+	font-family: 'Droid Sans', serif;
+}
+
+.event_title {
+	color: #335797;
+	font-size: 20px;
+	line-height: 2em;
+}
+
+.event_description {
+	padding-top: 0.5em;
+}
+
+.event_location, .event_time {
+	color: #6397D5;
+}
+
+#posts {
+	width: 50%;
+	margin: 2% 15%;
+}
+
+.post_time, .post_img, .post_content {
+	font-family: 'Droid Sans', serif;
+}
+
+.post_content {
+	text-align: justify;
+}
+
+.post_time {
+	color: #6397D5;
+}
+
+.post_title {
+	font-family: 'PT Sans', sans-serif;	
+	line-height: 2em;
+	font-size: 20px;
+}
+ 
+.post_img {
+	float: right;
+	margin: 5% 0% 5% 5%;
+}
+
+#copyright {
+	margin-left: 40%;
+	margin-top: 25px;
+}
+
+#footer {
+	background: url("../../images/sky/usernav_bg.png");
+	height: 70px;
+	position: absolute;
+	width:100%;
+	bottom: 0px;
+	
+	img {
+		position: absolute;
+		bottom: 15px;
+	}
+}
+
+#black {
+	right: 50px;
+}
+
+#dark_blue {
+	right: 100px;
+}
+
+#light_blue {
+	right: 150px;
+}
+
+.upcoming_events_title {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 30px;
+	line-height: 2em;
+}
+
+.calendar {
+	float: right;
+	padding-right: 50px;
+	padding-top: 10px;
+}

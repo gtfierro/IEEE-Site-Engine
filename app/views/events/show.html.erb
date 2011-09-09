@@ -1,15 +1,15 @@
-<h4><%= @e.title %></h4>
-<p>
+<div class="event_title"><%= @e.title %></div>
+<div class="event_location">
 	<b><%= @e.location %></b>
-</p>
-<p>
+</div>
+<div class="event_description">
 	<%= @e.description %>
-</p>
-<p>
+</div>
+<div class="event_time">
 	<b><%= @e.event_start.strftime("Start: %a %d %b - %I:%M %p") %></b>
 	<br />
 	<b><%= @e.event_end.strftime("End: %a %d %b - %I:%M %p") %></b>
-</p>
+</div>
 
 <h4>Attending</h4>
 <% if has_permission %>

@@ -2,12 +2,20 @@
 <html>
 	<head>
 		<%= google_font_link_tag 'Droid Sans' %>
+		<%= google_font_link_tag 'PT Sans' %>
 		<%= include_stylesheets :common, :media => 'screen' %>
 		<%= yield :stylesheets %>
 		<%= include_javascripts :common %>
 		<%= yield :javascripts %> <title>Institute of Electrical and Electronics Engineers</title>
 	</head>
 	<body>
+		<div id="user_nav">
+			<% if User.exists? and current_user %>
+				<a href="/logout" class="link_logout">LOGOUT</a>
+			<% else %>
+				<a href="/login" class="link_login">LOGIN</a>
+			<% end %>
+		</div>
 		<div id="page_header">
 			<!--<div id="user-navigation">
 			<ul class="wat-cf">
@@ -43,17 +51,15 @@
 					<li>
 						<a href="#" class="link5">ABOUT IEEE</a>
 					</li>
-					<li>
-						<% if User.exists? and current_user %>
-							<a href="/logout" class="link_logout">LOGOUT</a>
-						<% else %>
-							<a href="/login" class="link_login">LOGIN</a>
-						<% end %>
-					</li>
 				</ul>
 			</div>
 		</div>
 		<div id="wrapper" class="wat-cf">
+			<div id="sidebar">
+				<div class="upcoming_events_title">Upcoming Events</div>
+				<a href="#">View Calendar</a><br>
+				<%= yield :sidebar %>
+			</div>
 			<div class="flash">
 				<% flash.each do |type, message| -%>
 				<div class="message <%= type %>">
@@ -65,17 +71,17 @@
 			</div>
 			<div id="page_body">
 				<%= yield %>
-				<div id="footer">
-					<div class="block">
-						<p>
-							Copyright &copy; <%= Time.now.year %> UC Berkeley IEEE.
-						</p>
-					</div>
+				<div id="featured_article">
 				</div>
 			</div>
-			<div id="sidebar">
-				<%= yield :sidebar %>
+		</div>
+		<div id="footer">
+			<div id="copyright">
+						Copyright &copy; <%= Time.now.year %> UC Berkeley IEEE.
 			</div>
+			<img id="black" src='../../images/sky/black_button.png'>
+			<img id="dark_blue" src='../../images/sky/dark_blue_button.png'>
+			<img id="light_blue" src='../../images/sky/light_blue_button.png'>
 		</div>
 	</body>
 </html>

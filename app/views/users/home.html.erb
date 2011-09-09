@@ -1,33 +1,39 @@
+<div id="posts">
 <% recent_posts.each do |p| %>
-	<h3><%= p.title %></h3>
-	<%= p.created_at.strftime("%a %d %b - %I:%M %p")%>
-	<p>
+	<div class="post_time"><%= p.created_at.strftime("%B %e")%></div>
+	<div class="post_title"><b><%= p.title %></b></div>
+	<div class="post_img"><img src='../../images/sky/post_pic.png'></div>
+	<div class="post_content">
 		<%= p.content %>
-	</p>
+	</div>
 	<% if current_user %>
 		<%= link_to "Edit", edit_post_path(p) %>
 		<%= link_to "Destroy", post_path(p), :method => "delete" %>
 	<% end %>
 <% end %>
+</div>
 
 
 <% content_for :sidebar do %>
-	<% if not current_user%>
-		<%= render 'sessions/form' %>
-	<% end %>
 	<% upcoming_events.each do |e| %>
-		<h4><%= link_to e.title, event_path(e) %></h4>
-		<p>
-			<b><%= e.location %></b>
-		</p>
-		<p>
+		<span class="event_title">
+			<b><%= link_to e.title, event_path(e) %></b>
+			<a href="#"><img class="calendar" src="../../images/sky/calendar.png" title="Add to Google Calendar" alt="Add to Google Calendar"></a>
+		</span>
+		<br>
+		<span class="event_location">
+			<%= e.location %>
+		</span>
+		<br>
+		<span class="event_time">
+			<%= e.event_start.strftime("%m/%d, %l:%M %p") %>
+			<%= e.event_end.strftime("- %l:%M %p") %>
+		</span>
+		<br>
+		<div class="event_description">
 			<%= e.description %>
-		</p>
-		<p>
-			<b><%= e.event_start.strftime("Start: %a %d %b - %I:%M %p") %></b>
-			<br />
-			<b><%= e.event_end.strftime("End: %a %d %b - %I:%M %p") %></b>
-		</p>
+		</div>
+		<br>
 		<% if current_user %>
 			<%= link_to "Edit", edit_event_path(e) %>
 			<%= link_to "Destroy", event_path(e), :method => "delete" %>

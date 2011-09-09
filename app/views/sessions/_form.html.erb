@@ -1,5 +1,6 @@
 <%= form_tag sessions_path do %>
-  <p>
+<div>
+	<p>
     <%= label_tag :email %><br />
     <%= text_field_tag :email, params[:email] %>
   </p>
@@ -8,4 +9,5 @@
     <%= password_field_tag :password %>
   </p>
   <p class="button"><%= submit_tag "Log in" %></p>
+</div>
 <% end %>
