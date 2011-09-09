@@ -19,6 +19,7 @@ Ieee::Application.routes.draw do
   resources :events do
     resources :signups
   end
+  resources :events
   resources :signups
   resources :posts
   

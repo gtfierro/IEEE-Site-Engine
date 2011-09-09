@@ -12,8 +12,10 @@
 		<div id="user_nav">
 			<% if User.exists? and current_user %>
 				<a href="/logout" class="link_logout">LOGOUT</a>
+				<a href="/users/edit" class="link_logout">USER SETTINGS</a>
 			<% else %>
 				<a href="/login" class="link_login">LOGIN</a>
+				<a href="/signup" class="link_signup">SIGNUP</a>
 			<% end %>
 		</div>
 		<div id="page_header">
@@ -56,7 +58,7 @@
 		</div>
 		<div id="wrapper" class="wat-cf">
 			<div id="sidebar">
-				<div class="upcoming_events_title">Upcoming Events</div>
+				<div class="upcoming_events_title"><%= link_to "Upcoming Events", event_path("all") %></div>
 				<a href="#">View Calendar</a><br>
 				<%= yield :sidebar %>
 			</div>

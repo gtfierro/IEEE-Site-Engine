@@ -18,8 +18,15 @@ class EventsController < ApplicationController
   end
   
   def show
-    @e = Event.find(params[:id])
+    if params[:id]=="all"
+      @e = Event.all
+      puts @e
+      render "all"
+    else
+      @e = Event.find(params[:id])
+    end
   end
+
   
   def signup
     @e = Event.find(params[:event_id])

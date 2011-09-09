@@ -1,17 +1,19 @@
 <div id="posts">
-<% recent_posts.each do |p| %>
-	<div class="post_time"><%= p.created_at.strftime("%B %e")%></div>
-	<div class="post_title"><b><%= p.title %></b></div>
-	<div class="post_img"><img src='../../images/sky/post_pic.png'></div>
-	<div class="post_content">
-		<%= p.content %>
-	</div>
-	<% if current_user %>
-		<%= link_to "Edit", edit_post_path(p) %>
-		<%= link_to "Destroy", post_path(p), :method => "delete" %>
+<% if Post.exists? %>
+	<% recent_posts.each do |p| %>
+		<div class="post_time"><%= p.created_at.strftime("%B %e")%></div>
+		<div class="post_title"><b><%= p.title %></b></div>
+		<div class="post_img"><img src='../../images/sky/post_pic.png'></div>
+		<div class="post_content">
+			<%= p.content %>
+		</div>
+		<% if current_user %>
+			<%= link_to "Edit", edit_post_path(p) %>
+			<%= link_to "Destroy", post_path(p), :method => "delete" %>
+		<% end %>
 	<% end %>
+	</div>
 <% end %>
-</div>
 
 
 <% content_for :sidebar do %>

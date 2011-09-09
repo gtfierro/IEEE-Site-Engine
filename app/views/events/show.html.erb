@@ -26,7 +26,7 @@
 			<% if has_permission %>
 				<%= link_to u.email, user_signup_mark_path(u, s.id), :method => "post" %> - Attended: <%= s.attended %>
 			<% else %>
-				<%= u.email %> - Attended: <%= s.attended%>
+				<%= link_to u.email, user_signup_mark_path(u, s.id), :method => "post" %> - Attended: <%= s.attended%>
 			<% end %>
 		</p>
 	<% end %>
