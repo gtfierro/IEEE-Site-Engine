@@ -8,6 +8,12 @@ a {
   color: inherit;
   text-decoration: none;
 }
+#wrapper {
+  width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 #user_nav {
   background: url("../../images/sky/usernav_bg.png");
   height: 30px;

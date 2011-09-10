@@ -92,8 +92,8 @@
   color: #6397D5;
 }
 #posts {
-  width: 50%;
-  margin: 2% 15%;
+  width: 75%;
+  margin: 2% 0%;
 }
 .post_time, .post_img, .post_content {
   font-family: 'Droid Sans', serif;
