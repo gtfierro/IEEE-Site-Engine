@@ -11,11 +11,13 @@
 	<b><%= @e.event_end.strftime("End: %a %d %b - %I:%M %p") %></b>
 </div>
 
+<% if Signup.where(:event_id => @e.id).length > 0 %>
 <h4>Attending</h4>
-<% if has_permission %>
-	<p>
-		You can click the email addresses to change the "attended" flag
-	</p>
+	<% if has_permission %>
+		<p>
+			You can click the email addresses to change the "attended" flag
+		</p>
+	<% end %>
 <% end %>
 
 
