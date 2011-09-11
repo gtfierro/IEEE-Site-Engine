@@ -1,0 +1,50 @@
+<div id="posts">
+<% if Post.exists? %>
+<% recent_posts.each do |p| %>
+<div class="post_time"><%= p.created_at.strftime("%B %e")%></div>
+<div class="post_title"><%= p.title %></div>
+<div class="post_content">
+  <%= p.content %>
+</div>
+<% if current_user %>
+<%= link_to "Edit", edit_post_path(p) %>
+<%= link_to "Destroy", post_path(p), :method => "delete" %>
+<% end %>
+<% end %>
+</div>
+<% end %>
+
+<% content_for :sidebar do %>
+<% upcoming_events.each do |e| %>
+<span class="event_title">
+  <%= link_to e.title, event_path(e) %>
+  <a href="#"><img class="calendar" src="../../images/sky/calendar.png" title="Add to Google Calendar" alt="Add to Google Calendar"></a>
+</span>
+<br>
+<span class="event_location">
+  <%= e.location %>
+</span>
+<br>
+<span class="event_time">
+  <%= e.event_start.strftime("%m/%d, %l:%M %p") %>
+  <%= e.event_end.strftime("- %l:%M %p") %>
+</span>
+<br>
+<div class="event_description">
+  <%= e.description %>
+</div>
+<br>
+<% if current_user %>
+<%= link_to "Edit", edit_event_path(e) %>
+<%= link_to "Destroy", event_path(e), :method => "delete" %>
+<%= link_to "Sign Up", new_event_signup_path(e) %>
+<% end %>
+<% end %>
+<br />
+<br />
+<% if current_user %>
+<%= link_to 'Create New Event', new_event_path %>
+<br />
+<%= link_to 'Create New Post', new_post_path %>
+<% end %>
+<% end %>

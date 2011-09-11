@@ -118,6 +118,8 @@
   background: url("../../images/sky/usernav_bg.png");
   height: 70px;
   width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 .upcoming_events_title {
   font-size: 20px;
@@ -126,4 +128,20 @@
 .calendar {
   float: right;
   border-style: none;
+}
+#page_body {
+  min-height: 400px;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#container {
+  min-height: 100%;
+  position: relative;
+}
+#wrapper {
+  padding: 10px;
+  padding-bottom: 70px;
 }

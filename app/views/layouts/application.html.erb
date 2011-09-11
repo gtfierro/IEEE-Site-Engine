@@ -9,6 +9,7 @@
     <%= yield :javascripts %> <title>Institute of Electrical and Electronics Engineers</title>
   </head>
   <body>
+	<div id="container">
     <div id="user_nav">
       <% if User.exists? and current_user %>
       <a href="/logout" class="link_logout">LOGOUT</a>
@@ -82,5 +83,6 @@
 	Copyright &copy; <%= Time.now.year %> UC Berkeley IEEE.
       </div>
     </div>
+</div>
   </body>
 </html>
