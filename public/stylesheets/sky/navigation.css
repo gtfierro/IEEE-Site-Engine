@@ -4,7 +4,7 @@
   padding-top: 5px;
 }
 #user_nav a.link_login {
-  width: 59px;
+  width: -1px;
   padding-right: 20px;
   background-position: -499px 0px;
 }
@@ -12,7 +12,7 @@
   background-position: -499px -12px;
 }
 #user_nav a.link_logout {
-  width: 59px;
+  width: -1px;
   padding-right: 20px;
   background-position: -499px -24px;
 }
@@ -113,12 +113,16 @@
   margin-left: 40%;
   margin-top: 25px;
 }
+.push {
+  height: 4 em;
+}
 #footer {
   background: url("../../images/sky/usernav_bg.png");
   height: 70px;
   position: absolute;
   width: 100%;
   bottom: 0px;
+  height: 4em;
 }
 #footer img {
   position: absolute;
