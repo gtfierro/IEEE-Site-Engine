@@ -110,32 +110,17 @@
   margin: 5% 0% 5% 5%;
 }
 #copyright {
-  margin-left: 40%;
-  margin-top: 25px;
+  float: right;
+  margin: 1% 1%;
 }
-.push {
-  height: 4 em;
+#push {
+  height: 85px;
 }
 #footer {
-  background: url("../../images/sky/usernav_bg.png");
-  height: 70px;
-  position: absolute;
+  background: url("../../images/sky/usernav_bg.png") repeat scroll 0 0 #000000;
+  clear: both;
+  height: 85px;
   width: 100%;
-  bottom: 0px;
-  height: 4em;
-}
-#footer img {
-  position: absolute;
-  bottom: 15px;
-}
-#black {
-  right: 50px;
-}
-#dark_blue {
-  right: 100px;
-}
-#light_blue {
-  right: 150px;
 }
 .upcoming_events_title {
   font-size: 20px;
