@@ -74,38 +74,34 @@
 #navigation a.link5:hover {
   background-position: -391px -12px;
 }
-.event_title,
-.event_location,
-.event_description,
-.event_time {
-  font-family: 'Droid Sans', serif;
-}
 .event_title {
-  color: #335797;
-  font-size: 20px;
+  color: #343434;
+  font-size: 17px;
   line-height: 2em;
 }
 .event_description {
   padding-top: 0.5em;
+  font-size: 12px;
+  color: #616161;
 }
 .event_location, .event_time {
-  color: #6397D5;
+  color: #616161;
+  font-size: 12px;
 }
 #posts {
   width: 75%;
   margin: 2% 0%;
 }
-.post_time, .post_img, .post_content {
-  font-family: 'Droid Sans', serif;
-}
 .post_content {
   text-align: justify;
+  font-size: 13px;
+  color: #343434;
 }
 .post_time {
-  color: #6397D5;
+  color: #616161;
+  font-size: 13px;
 }
 .post_title {
-  font-family: 'PT Sans', sans-serif;
   line-height: 2em;
   font-size: 20px;
 }
@@ -138,12 +134,10 @@
   right: 150px;
 }
 .upcoming_events_title {
-  font-family: 'PT Sans', sans-serif;
-  font-size: 30px;
+  font-size: 20px;
   line-height: 2em;
 }
 .calendar {
   float: right;
-  padding-right: 50px;
-  padding-top: 10px;
+  border-style: none;
 }

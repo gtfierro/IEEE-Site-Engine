@@ -3,6 +3,7 @@ body {
   margin: 0px;
   background: url("../../images/sky/body_bg.png");
   font-family: 'Droid Sans', Arial;
+  font-size: 13px;
 }
 a {
   color: inherit;

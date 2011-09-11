@@ -1,89 +1,89 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<%= google_font_link_tag 'Droid Sans' %>
-		<%= google_font_link_tag 'PT Sans' %>
-		<%= include_stylesheets :common, :media => 'screen' %>
-		<%= yield :stylesheets %>
-		<%= include_javascripts :common %>
-		<%= yield :javascripts %> <title>Institute of Electrical and Electronics Engineers</title>
-	</head>
-	<body>
-		<div id="user_nav">
-			<% if User.exists? and current_user %>
-				<a href="/logout" class="link_logout">LOGOUT</a>
-				<a href="/users/edit" class="link_logout">USER SETTINGS</a>
-			<% else %>
-				<a href="/login" class="link_login">LOGIN</a>
-				<a href="/signup" class="link_signup">SIGNUP</a>
-			<% end %>
-		</div>
-		<div id="page_header">
-			<!--<div id="user-navigation">
-			<ul class="wat-cf">
-			<% if User.exists? and current_user %>
-			<li><a href="/home"><%= t("web-app-theme.home", :default => "Home") %></a></li>
-			<li><a href="/users/edit"><%= t("web-app-theme.logout", :default => "User Settings")%></a></li>
-			<li><a href="/logout" class="logout"><%= t("web-app-theme.logout", :default => "Logout") %></a></li>
-			<% else %>
-			<li><a href="/login" class="login"><%= t("web-app-theme.login", :default => "Login")%></a></li>
-			<li><a href="/signup" class="login"><%= t("web-app-theme.login", :default => "Signup")%></a></li>
-			<% end %>
-			</ul>
-			</div>
-			<div id="main-navigation">
-			<ul class="wat-cf"></ul>
-			</div>
-			-->
-			<div class="content">
-				<div id="logo"></div>
-				<ul id="navigation">
-					<li>
-						<a href="/home" class="link1">HOME</a>
-					</li>
-					<li>
-						<a href="#" class="link2">EVENTS</a>
-					</li>
-					<li>
-						<a href="#" class="link3">INDUSTRIAL RELATIONS</a>
-					</li>
-					<li>
-						<a href="#" class="link4">H.O.P.E</a>
-					</li>
-					<li>
-						<a href="#" class="link5">ABOUT IEEE</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div id="wrapper" class="wat-cf">
-			<div id="sidebar">
-				<div class="upcoming_events_title"><%= link_to "Upcoming Events", event_path("all") %></div>
-				<a href="#">View Calendar</a><br>
-				<%= yield :sidebar %>
-			</div>
-			<div class="flash">
-				<% flash.each do |type, message| -%>
-				<div class="message <%= type %>">
-					<p>
-						<%= message %>
-					</p>
-				</div>
-				<% end -%>
-			</div>
-			<div id="page_body">
-				<%= yield %>
-				<div id="featured_article">
-				</div>
-			</div>
-		</div>
-		<div id="footer">
-			<div id="copyright">
-						Copyright &copy; <%= Time.now.year %> UC Berkeley IEEE.
-			</div>
-			<img id="black" src='../../images/sky/black_button.png'>
-			<img id="dark_blue" src='../../images/sky/dark_blue_button.png'>
-			<img id="light_blue" src='../../images/sky/light_blue_button.png'>
-		</div>
-	</body>
+  <head>
+    <%= google_font_link_tag 'Droid Sans' %>
+    <%= google_font_link_tag 'PT Sans' %>
+    <%= include_stylesheets :common, :media => 'screen' %>
+    <%= yield :stylesheets %>
+    <%= include_javascripts :common %>
+    <%= yield :javascripts %> <title>Institute of Electrical and Electronics Engineers</title>
+  </head>
+  <body>
+    <div id="user_nav">
+      <% if User.exists? and current_user %>
+      <a href="/logout" class="link_logout">LOGOUT</a>
+      <a href="/users/edit" class="link_logout">USER SETTINGS</a>
+      <% else %>
+      <a href="/login" class="link_login">LOGIN</a>
+      <a href="/signup" class="link_signup">SIGNUP</a>
+      <% end %>
+    </div>
+    <div id="page_header">
+      <!--<div id="user-navigation">
+	       <ul class="wat-cf">
+		 <% if User.exists? and current_user %>
+		 <li><a href="/home"><%= t("web-app-theme.home", :default => "Home") %></a></li>
+<li><a href="/users/edit"><%= t("web-app-theme.logout", :default => "User Settings")%></a></li>
+<li><a href="/logout" class="logout"><%= t("web-app-theme.logout", :default => "Logout") %></a></li>
+<% else %>
+<li><a href="/login" class="login"><%= t("web-app-theme.login", :default => "Login")%></a></li>
+<li><a href="/signup" class="login"><%= t("web-app-theme.login", :default => "Signup")%></a></li>
+<% end %>
+</ul>
+</div>
+<div id="main-navigation">
+  <ul class="wat-cf"></ul>
+</div>
+-->
+      <div class="content">
+	<div id="logo"></div>
+	<ul id="navigation">
+	  <li>
+	    <a href="/home" class="link1">HOME</a>
+	  </li>
+	  <li>
+	    <a href="#" class="link2">EVENTS</a>
+	  </li>
+	  <li>
+	    <a href="#" class="link3">INDUSTRIAL RELATIONS</a>
+	  </li>
+	  <li>
+	    <a href="#" class="link4">H.O.P.E</a>
+	  </li>
+	  <li>
+	    <a href="#" class="link5">ABOUT IEEE</a>
+	  </li>
+	</ul>
+      </div>
+    </div>
+    <div id="wrapper" class="wat-cf">
+      <div id="sidebar">
+	<div class="upcoming_events_title">Upcoming Events</div>
+	<%= link_to "View Calendar", event_path("all") %><br/>
+	<%= yield :sidebar %>
+      </div>
+      <div class="flash">
+	<% flash.each do |type, message| -%>
+	<div class="message <%= type %>">
+	  <p>
+	    <%= message %>
+	  </p>
+	</div>
+	<% end -%>
+      </div>
+      <div id="page_body">
+	<%= yield %>
+	<div id="featured_article">
+	</div>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="copyright">
+	Copyright &copy; <%= Time.now.year %> UC Berkeley IEEE.
+      </div>
+      <img id="black" src='../../images/sky/black_button.png'>
+      <img id="dark_blue" src='../../images/sky/dark_blue_button.png'>
+      <img id="light_blue" src='../../images/sky/light_blue_button.png'>
+    </div>
+  </body>
 </html>

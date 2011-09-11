@@ -1,40 +1,40 @@
 <div class="event_title"><%= @e.title %></div>
 <div class="event_location">
-	<b><%= @e.location %></b>
+  <%= @e.location %>
 </div>
 <div class="event_description">
-	<%= @e.description %>
+  <%= @e.description %>
 </div>
 <div class="event_time">
-	<b><%= @e.event_start.strftime("Start: %a %d %b - %I:%M %p") %></b>
-	<br />
-	<b><%= @e.event_end.strftime("End: %a %d %b - %I:%M %p") %></b>
+  <b><%= @e.event_start.strftime("Start: %a %d %b - %I:%M %p") %></b>
+  <br />
+  <b><%= @e.event_end.strftime("End: %a %d %b - %I:%M %p") %></b>
 </div>
 
 <% if Signup.where(:event_id => @e.id).length > 0 %>
 <h4>Attending</h4>
-	<% if has_permission %>
-		<p>
-			You can click the email addresses to change the "attended" flag
-		</p>
-	<% end %>
+<% if has_permission %>
+<p>
+  You can click the email addresses to change the "attended" flag
+</p>
+<% end %>
 <% end %>
 
 
 <% if Signup.exists? %>
-	<% @e.users.each do |u| %>
-		<p>
-			<% s = u.signups.where(:event_id => @e.id).first%>
-			<% if has_permission %>
-				<%= link_to u.email, user_signup_mark_path(u, s.id), :method => "post" %> - Attended: <%= s.attended %>
-			<% else %>
-				<%= link_to u.email, user_signup_mark_path(u, s.id), :method => "post" %> - Attended: <%= s.attended%>
-			<% end %>
-		</p>
-	<% end %>
+<% @e.users.each do |u| %>
+<p>
+  <% s = u.signups.where(:event_id => @e.id).first%>
+  <% if has_permission %>
+  <%= link_to u.email, user_signup_mark_path(u, s.id), :method => "post" %> - Attended: <%= s.attended %>
+  <% else %>
+  <%= link_to u.email, user_signup_mark_path(u, s.id), :method => "post" %> - Attended: <%= s.attended%>
+  <% end %>
+</p>
+<% end %>
 <% end %>
 <% if current_user %>
-	<%= link_to 'Edit', edit_event_path %>
+<%= link_to 'Edit', edit_event_path %>
 <% end %>
 
 <%= link_to 'Back', :back %>
