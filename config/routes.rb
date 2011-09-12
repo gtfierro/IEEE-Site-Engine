@@ -5,6 +5,7 @@ Ieee::Application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
   get "home" => "users#home", :as => "home"
+  get "about" => "statics#about", :as => "about"
   get "users/edit" => "users#edit"
 
   
@@ -22,6 +23,7 @@ Ieee::Application.routes.draw do
   resources :events
   resources :signups
   resources :posts
+  resources :statics
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
