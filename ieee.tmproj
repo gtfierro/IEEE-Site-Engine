@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/views/events/show.html.erb</string>
+	<string>app/views/users/home.html.erb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -239,21 +239,21 @@
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>26</integer>
+			<integer>32</integer>
 		</dict>
 		<key>app/views/users/home.html.erb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>19</integer>
+				<integer>88</integer>
 				<key>line</key>
-				<integer>1</integer>
+				<integer>5</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>5</integer>
+			<integer>0</integer>
 		</dict>
 		<key>config/routes.rb</key>
 		<dict>

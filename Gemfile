@@ -5,6 +5,7 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'jquery-rails', '>= 1.0.12'
 gem 'jammit'
 gem 'less'
+gem 'paperclip'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

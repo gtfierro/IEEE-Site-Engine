@@ -35,6 +35,7 @@ GEM
     arel (2.0.10)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
+    cocaine (0.2.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     i18n (0.5.0)
@@ -53,6 +54,11 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     open4 (1.1.0)
+    paperclip (2.4.1)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
+      cocaine (>= 0.0.2)
+      mime-types
     pg (0.11.0)
     polyglot (0.3.2)
     rack (1.2.3)
@@ -95,6 +101,7 @@ DEPENDENCIES
   jammit
   jquery-rails (>= 1.0.12)
   less
+  paperclip
   pg
   rails (= 3.0.9)
   sqlite3
