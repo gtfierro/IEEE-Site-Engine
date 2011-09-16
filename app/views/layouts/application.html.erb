@@ -46,10 +46,10 @@
 			<%= link_to "EVENTS", event_path("all"), :class => "link2"%>
 	  </li>
 	  <li>
-	    <a href="#" class="link3">INDUSTRIAL RELATIONS</a>
+                        <%= link_to "INDUSTRIAL RELATIONS", indrel_url, :class => "link3"%>
 	  </li>
 	  <li>
-	    <a href="#" class="link4">H.O.P.E</a>
+                        <%= link_to "H.O.P.E.", hope_url, :class => "link4"%>
 	  </li>
 	  <li>
 			<%= link_to "ABOUT IEEE", about_url, :class => "link5"%>
@@ -111,7 +111,7 @@
     </div>
     <div id="footer">
       <div id="copyright">
-	Copyright &copy; <%= Time.now.year %> UC Berkeley IEEE.
+	Copyright &copy; <%= Time.now.year %> UC Berkeley IEEE
       </div>
     </div>
 </div>
