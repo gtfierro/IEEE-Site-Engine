@@ -4,6 +4,7 @@ body {
   background: url("../../images/sky/body_bg.png");
   font-family: 'Droid Sans', Arial;
   font-size: 13px;
+  height: 100%;
 }
 a {
   color: inherit;
