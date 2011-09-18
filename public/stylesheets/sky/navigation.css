@@ -130,6 +130,7 @@
   border-style: none;
 }
 #page_body {
+  width: 70%;
   min-height: 400px;
 }
 html, body {
