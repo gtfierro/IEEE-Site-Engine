@@ -6,15 +6,19 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
-    if @user.save
-      redirect_to "/login", :notice => "Signed up!"
-    else
-      redirect_to "/signup"
+    respond_to do |format|
+      if @user.save
+        format.html {redirect_to "/login", :notice => "Login successful"}
+        format.xml {head :ok}
+      else
+        format.html {redirect_to "/signup"}
+        format.xml {head :ok }
+      end
     end
   end
   
   def edit
-    @user = current_user #User.find(params[:id])
+    @user = current_user
   end
   
   def update

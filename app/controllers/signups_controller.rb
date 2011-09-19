@@ -10,16 +10,23 @@ class SignupsController < ApplicationController
   def create
     ##TODO
     # => update associations for users, events *and* signups
-    puts params
     @e = Event.find(params[:signup][:event_id])
     @signup = Signup.new(params[:signup])
     @signup.user = current_user
-    if @signup.save
-      @e.signups << @signup
-      @e.save
-      redirect_to home_url, :notice => "signup successful"
-    else
-      redirect_to home_url, :notice => @signup.errors
+    respond_to do |format|
+      if @signup.save
+        @e.signups << @signup
+        if @e.save
+          format.html {redirect_to home_url, :notice => "Signup successful"}
+          format.xml {head :ok}
+        else
+          format.html{redirect_to home_url, :notice => "Signup wasn't successful"}
+          format.xml {render :xml => @e.errors, :status => :unprocessable_entity}
+        end
+      else
+        format.html {redirect_to home_url, :notice => "Signup wasn't successful"}
+        format.xml {render :xml => @signup.errors, :status => :unprocessable_entity}        
+      end
     end
   end
   
@@ -31,9 +38,15 @@ class SignupsController < ApplicationController
     else
       @s.attended = true
     end
-    @s.save
-    redirect_to event_path(@s.event), :notice => "Changed attended to "+@s.attended.to_s+" for "+@u.email
-    
+    respond_to do |format|
+      if @s.save
+        format.html {redirect_to event_path(@s.event), :notice => "Changed attended to "+@s.attended.to_s+" for "+@u.email}
+        format.xml {head :ok}
+      else
+        format.html {redirect_to event_path(@s.event), :notice => "Change was unsuccessful"}
+        format.xml {render :xml => @s.errors, :status => :unprocessable_entity}
+      end
+    end
   end
   
 end

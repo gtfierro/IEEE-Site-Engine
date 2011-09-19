@@ -6,10 +6,14 @@ class EventsController < ApplicationController
   
   def create
     @e = Event.new(params[:event])
-    if @e.save
-      redirect_to home_url, :notice => "Event creation successful for " + @e.title
-    else
-      redirect_to home_url, :notice => @e.errors
+    respond_to do |format|
+      if @e.save
+        format.html {redirect_to home_url, :notice => "Event creation successful for" + @e.title}
+        format.xml {head :ok}
+      else
+        format.html {redirect_to home_url, :notice => @e.errors}
+        format.xml {render :sml => @e.errors, :status => :unprocessable_entity}
+      end
     end
   end
   
@@ -18,12 +22,14 @@ class EventsController < ApplicationController
   end
   
   def show
-    if params[:id]=="all"
-      @e = Event.all
-      puts @e
-      render "all"
-    else
-      @e = Event.find(params[:id])
+    respond_to do |format|
+      if params[:id] == "all"
+        @e = Event.all
+        format.html {render "all"}
+        format.xml {head :ok}
+      else
+        @e = Event.find(params[:id])
+      end
     end
   end
 
@@ -31,27 +37,38 @@ class EventsController < ApplicationController
   def signup
     @e = Event.find(params[:event_id])
     @e.users << current_user
-    @e.save
-    puts @e.users
-    redirect_to home_url, :notice => "Signup for "+@e.title+" successful"
+    respond_to do |format|
+      if @e.save
+        format.html {redirect_to home_url, :notice => "Signup for "+ @e.title+ " successful"}
+        format.xml {head :ok}
+      else
+        format.html {redirect_to home_url, :notice => "Signup was unsuccessful"}
+        format.xml {render :xml => @e.errors, :status => :unprocessable_entity}
+      end
+    end
   end
   
 
   
   def update
     @e = Event.find(params[:id])
-    if @e.update_attributes(params[:event])
-      notice = "Update successful!"
-    else
-      notice = "Update was not successful"
+    respond_to do |format|
+      if @e.update_attributes(params[:event])
+        format.html {redirect_to home_url, :notice => "Update successful!"}
+        format.xml {head :ok}
+      else
+        format.html {redirect_to home_url, :notice => "Update wasn't successful"}
+        format.xml {render :xml => @e.errors, :status => :unprocessable_entity}
+      end
     end
-    redirect_to home_url, :notice => notice
   end
   
   def destroy
     @e = Event.find(params[:id])
     @e.destroy
-    redirect_to home_url, :notice => "Event destroyed!"
+    respond_to do |format|
+      format.html {redirect_to home_url, :notice => "Event destroyed!"}
+      format.xml {head :ok}
+    end
   end
-
 end
