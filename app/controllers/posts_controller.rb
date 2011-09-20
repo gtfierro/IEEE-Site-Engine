@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :has_permission, :except => :show
   
   def new
     @p = Post.new

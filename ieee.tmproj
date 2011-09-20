@@ -146,6 +146,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<false/>
 	<key>windowFrame</key>
-	<string>{{360, 4}, {885, 774}}</string>
+	<string>{{383, 4}, {885, 774}}</string>
 </dict>
 </plist>

@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-  
+  before_filter :has_permission, :except => :show
+    
   def new
     @e = Event.new
   end

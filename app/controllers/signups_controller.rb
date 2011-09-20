@@ -1,6 +1,6 @@
 class SignupsController < ApplicationController
   
-  before_filter :has_permission, :only => :mark
+  before_filter :has_permission
   
   def new
     @signup = Signup.new

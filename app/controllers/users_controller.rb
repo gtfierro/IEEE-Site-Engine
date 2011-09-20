@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :has_permission, :except => [:home]
   
   def new
     @user = User.new
