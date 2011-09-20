@@ -1,0 +1,30 @@
+//Constants
+$usernav_height: 30px;
+$header_height: 150px;
+$content_width: 920px;
+
+$navigation_height: 120px;
+$navigation_width: 558px;
+$navigation_layer_height: 12px;
+
+
+//Mixins
+@mixin centered($display_type: block) {
+    margin-left: auto;
+    margin-right: auto;
+    display: $display_type;
+}
+
+@mixin floater($display_type: block, $direction: left) {
+    float: $direction;
+    display: $display_type;
+}
+
+@mixin set_navigation($x_pos, $width, $padding, $level: 1) {
+    width: $width;
+    padding-right: $padding;
+    background-position: -$x_pos -((2 * $navigation_layer_height) * ($level - 1));
+    &:hover {
+        background-position: -$x_pos -($navigation_layer_height * (2 * $level - 1));
+    }
+}

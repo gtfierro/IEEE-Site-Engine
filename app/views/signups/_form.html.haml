@@ -1,0 +1,13 @@
+= form_for @signup,  :html => { :multipart => true } do |f|
+  - if @signup.errors.any?
+    .error_messages
+      %h2 Form is invalid
+      %ul
+        - for message in @signup.errors.full_messages
+          %li= message
+  %p
+    = f.label :role
+    %br/
+    = f.text_field :role
+  = f.hidden_field :event_id, :value => @e.id
+  %p.button= f.submit

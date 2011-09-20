@@ -1,0 +1,14 @@
+%h1 All Events
+- @e.each do |e|
+  .event_title= link_to e.title, event_path(e)
+  .event_location
+    = e.location
+  .event_description
+    = e.description
+  .event_time
+    %b= e.event_start.strftime("Start: %a %d %b - %I:%M %p")
+    %br/
+    %b= e.event_end.strftime("End: %a %d %b - %I:%M %p")
+%br/
+%br/
+= link_to 'Back', :back
