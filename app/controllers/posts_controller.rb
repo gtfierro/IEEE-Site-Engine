@@ -19,11 +19,19 @@ class PostsController < ApplicationController
   end
   
   def edit
-    @p = Post.find(params[:id])
+    if not Post.exists?(params[:id])
+      redirect_to home_url, :notice => "Post not found"
+    else
+      @p = Post.find(params[:id])
+    end
   end
   
   def update
-    @p = Post.find(params[:id])
+    if not Post.exists?(params[:id])
+      redirect_to home_url, :notice => "Post not found"
+    else
+      @p = Post.find(params[:id])
+    end
     respond_to do |format|
       if @p.update_attributes(params[:post])
         format.html {redirect_to home_url, :notice => "Update successful!"}
@@ -36,7 +44,11 @@ class PostsController < ApplicationController
   end
   
   def destroy
-    @p = Post.find(params[:id])
+    if not Post.exists?(params[:id])
+      redirect_to home_url, :notice => "Post not found"
+    else
+      @p = Post.find(params[:id])
+    end
     @p.destroy
     respond_to do |format|
       format.html {redirect_to home_url, :notice => "Post destroyed!"}

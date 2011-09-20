@@ -19,15 +19,27 @@ class EventsController < ApplicationController
   end
   
   def edit
-    @e = Event.find(params[:id])
+    if not Event.exists?(params[:id])
+      respond_to do |format|
+        format.html {redirect_to home_url, :notice => "Event not found"}
+        format.xml {head :ok}      
+      end
+    else
+      @e = Event.find(params[:id])
+    end
   end
   
   def show
-    respond_to do |format|
-      if params[:id] == "all"
-        @e = Event.all
-        format.html {render "all"}
-        format.xml {head :ok}
+    if params[:id] == "all"
+      @e = Event.all
+      format.html {render "all"}
+      format.xml {head :ok}
+    else
+      if not Event.exists?(params[:id])
+        respond_to do |format|
+          format.html {redirect_to home_url, :notice => "Event not found"}
+          format.xml {head :ok}      
+        end
       else
         @e = Event.find(params[:id])
       end
@@ -36,7 +48,14 @@ class EventsController < ApplicationController
 
   
   def signup
-    @e = Event.find(params[:event_id])
+    if not Event.exists?(params[:id])
+      respond_to do |format|
+        format.html {redirect_to home_url, :notice => "Event not found"}
+        format.xml {head :ok}      
+      end
+    else
+      @e = Event.find(params[:id])
+    end
     @e.users << current_user
     respond_to do |format|
       if @e.save
@@ -49,10 +68,15 @@ class EventsController < ApplicationController
     end
   end
   
-
-  
   def update
-    @e = Event.find(params[:id])
+    if not Event.exists?(params[:id])
+      respond_to do |format|
+        format.html {redirect_to home_url, :notice => "Event not found"}
+        format.xml {head :ok}      
+      end
+    else
+      @e = Event.find(params[:id])
+    end
     respond_to do |format|
       if @e.update_attributes(params[:event])
         format.html {redirect_to home_url, :notice => "Update successful!"}
