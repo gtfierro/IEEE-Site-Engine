@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
   validates_presence_of     :email
   validates_uniqueness_of   :email,
                             :on => :create
+  validates_presence_of     :name
+  validates_presence_of     :year
+  validates_numericality_of :year
+  validates_presence_of     :position                          
                             
   has_many  :events, :through => :signups
   has_many  :signups

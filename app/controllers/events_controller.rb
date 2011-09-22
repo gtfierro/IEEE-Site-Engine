@@ -31,9 +31,10 @@ class EventsController < ApplicationController
   
   def show
     if params[:id] == "all"
+      puts 'hi'
       @e = Event.all
-      format.html {render "all"}
-      format.xml {head :ok}
+      render "all"
+
     else
       if not Event.exists?(params[:id])
         respond_to do |format|
