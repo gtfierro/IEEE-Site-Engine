@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   def has_permission
     puts "hi"
     puts current_user
+    puts session[:user_id]
     unless current_user
       redirect_to home_url, :notice => "Permission Denied"
       return false
