@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   #Don't forget to make a new attribute accessile by adding it to this list when you make a migration
   
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :email, :password, :password_confirmation, :name, :year, :position
   
   attr_accessor :password
   before_save :encrypt_password

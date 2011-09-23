@@ -27,9 +27,6 @@ ActiveRecord::Schema.define(:version => 20110922164301) do
     t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
   end
 
   create_table "signups", :force => true do |t|

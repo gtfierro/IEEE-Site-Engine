@@ -3,9 +3,6 @@
 <% recent_posts.each do |p| %>
 <div class="post_time"><%= p.created_at.strftime("%B %e")%></div>
 <div class="post_title"><%= p.title %></div>
-<% if p.photo_file_name  != nil %>
-	<div class="post_img"><%= image_tag p.photo.url(:small) %></div>
-<% end %>
 <div class="post_content">
   <%= p.content %>
 </div>
