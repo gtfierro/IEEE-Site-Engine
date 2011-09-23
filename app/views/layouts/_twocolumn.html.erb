@@ -1,0 +1,52 @@
+<div id="main" class="clearfix">
+  <div id="sidebar">
+    <div class="upcoming_events_title">Upcoming Events</div>
+    <%= link_to "View Calendar", event_path("all") %><br/>
+    <% upcoming_events.each do |e| %>
+    <span class="event_title">
+      <%= link_to e.title, event_path(e) %>
+      <a href="#"><img class="calendar" src="../../images/sky/calendar.png" title="Add to Google Calendar" alt="Add to Google Calendar"></a>
+    </span>
+    <br>
+    <span class="event_location">
+      <%= e.location %>
+    </span>
+    <br>
+    <span class="event_time">
+      <%= e.event_start.strftime("%m/%d, %l:%M %p") %>
+      <%= e.event_end.strftime("- %l:%M %p") %>
+    </span>
+    <br>
+    <div class="event_description">
+      <%= e.description %>
+    </div>
+    <br>
+  <% if current_user %>
+  <%= link_to "Edit", edit_event_path(e) %>
+  <%= link_to "Destroy", event_path(e), :method => "delete" %>
+  <%= link_to "Sign Up", new_event_signup_path(e) %>
+  <% end %>
+  <% end %>
+  <br />
+  <br />
+  <% if current_user %>
+  <%= link_to 'Create New Event', new_event_path %>
+  <br />
+  <%= link_to 'Create New Post', new_post_path %>
+  <% end %>
+  </div>
+  <div class="flash">
+    <% flash.each do |type, message| -%>
+    <div class="message <%= type %>">
+      <p>
+	<%= message %>
+      </p>
+    </div>
+    <% end -%>
+  </div>
+  <div id="page_body">
+    <div id="featured_article">
+      <%= yield %>
+    </div>
+  </div>
+</div>

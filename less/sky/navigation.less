@@ -1,64 +1,6 @@
 @import "globals";
 
-.set_navigation(@x_pos, @width, @padding, @level: 1) {
-    width: @width;
-    padding-right: @padding;
-    background-position: -@x_pos -((2 * @navigation_layer_height) * (@level - 1));
-    &:hover {
-        background-position: -@x_pos -(@navigation_layer_height * (2 * @level - 1));
-    }
-}
-
-#user_nav {
-    a {
-		float: right;
-		margin-right: 10px;
-		padding-top: 5px;
-		
-		&.link_login {
-            .set_navigation(499px, -1px, 20px);
-        }
-        
-        &.link_logout {
-            .set_navigation(499px, -1px, 20px, 2);
-        }
-	}
-} 
-
 #navigation {
-    padding: 0px;
-    margin: 70px 20px 0px 0px;
-    list-style-type: none;
-    .floater(block, right);
-    width: @navigation_width;
-
-    a {
-        background: url("../../images/sky/navigation.png");
-        height: 11px;
-        text-indent: -9000px; 
-        .floater(block, left);
-
-        &.link1 {
-            .set_navigation(0px, 42px, 21px);
-        }
-
-        &.link2 {
-            .set_navigation(63px, 54px, 21px) 
-        }
-
-        &.link3 {
-            .set_navigation(138px, 168px, 18px);
-        }
-
-        &.link4 {
-            .set_navigation(324px, 46px, 21px);
-        }
-
-        &.link5 {
-            .set_navigation(391px, 70px, 24px);
-        }
-
-    }
 }
 
 .event_title {
@@ -104,20 +46,6 @@
 	margin: 5% 0% 5% 5%;
 }
 
-#copyright {
-	margin-left: 40%;
-	margin-top: 25px;
-	position: absolute;
-}
-
-#footer {
-	background: url("../../images/sky/usernav_bg.png");
-	height: 70px;
-	width: 100%;
-	position: absolute;
-	bottom: 0; 
-}
-
 .upcoming_events_title {
   font-size: 20px;
   line-height: 2em;
@@ -130,17 +58,6 @@
 
 #page_body {
   width: 70%;
-  min-height: 400px;
+  min-height: 100%;
 }
 
-html,
-body {
-   margin:0;
-   padding:0;
-   height:100%;
-}
-
-#container {
-	min-height: 100%;
-	position: relative;
-}

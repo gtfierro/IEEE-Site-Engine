@@ -1,55 +1,146 @@
 @import "globals";
 
-body {
+html,body {
     padding: 0px;
     margin: 0px;
     background: url("../../images/sky/body_bg.png");
     font-family: 'Droid Sans', Arial;
     font-size: 13px;
     height: 100%;
+    min-width: @content_width;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
-#wrapper {
-  width: @content_width;
+#container {
+  min-width: 920px;
   min-height: 100%;
-  padding-bottom: 10px;
-  .centered()
+}
+
+#header {
+  background: url("../../images/sky/header_bg.png");
+  height: @header_height;
+  border-width: 0px 10px 0px 0px;
+}
+
+#header .content {
+    width: @content_width;
+    padding-top: (@header_height - @navigation_height) / 2;
+    overflow: auto;
+    .centered();
+}
+
+#header .content #navigation {
+  padding: 0px;
+  margin: 70px 10px 0px 0px;
+  list-style-type: none;
+  .floater(block, right);
+  width: @navigation_width;
+
+  a {
+    background: url("../../images/sky/navigation.png");
+    height: 11px;
+    text-indent: -9000px;
+    .floater(block, left);
+   
+     &.link1 {
+        .set_navigation(0px, 42px, 21px);
+     }
+
+     &.link2 {
+        .set_navigation(63px, 54px, 21px) 
+     }
+
+     &.link3 {
+         .set_navigation(138px, 168px, 18px);
+     }
+
+     &.link4 {
+         .set_navigation(324px, 46px, 21px);
+     }
+
+     &.link5 {
+         .set_navigation(391px, 70px, 24px);
+     }
+  }
+}
+
+
+#user_nav {
+    a {
+		float: right;
+		margin-right: 10px;
+		padding-top: 5px;
+		
+		&.link_login {
+            .set_navigation(499px, -1px, 20px);
+        }
+        
+        &.link_logout {
+            .set_navigation(499px, -1px, 20px, 2);
+        }
+	}
+} 
+
+#logo {
+  margin-left: 10px;
+  display: inline-block;
+  width: 287px;
+  height: 120px;
 }
 
 #user_nav {
-	background: url("../../images/sky/usernav_bg.png");
-	height: @usernav_height;
+  background: url("../../images/sky/usernav_bg.png");
+  height: @usernav_height;
 }
 
-#page_header {
-    background: url("../../images/sky/header_bg.png");
-    height: @header_height;
-	border-width: 0px 10px 0px 0px;
-
-    div.content {
-        padding-top: (@header_height - @navigation_height) / 2;
-    }
+#main {
+  width: @content_width;
+  height: auto !important;
+  min-height: 100%;
+  height: 100%;
+  min-width: @content_width;
+  margin: 0 auto -@footer_height;
+  padding: 20px 0;
+  overflow: auto;
+  .centered();
 }
 
 #sidebar {
   float: right;
-  width: 25%
+  padding: 0;
+  width: @sidebar_width;
 }
 
-#logo {
-    background: url("../../images/sky/b_ieee_small.png");
-    width: 287px;
-    height: 120px;
-    .floater(block, left);
+#footer {
+  background: url("../../images/sky/usernav_bg.png");
+  height: @footer_height;
+  min-width: @content_width;
+  clear:both;
 }
 
-div.content {
-    width: @content_width;
-    padding-top: (@header_height - @navigation_height) / 2;
-    .centered();
+#footer #copyright {
+  padding-top: 10px;
+  width: @content_width;
+  min-width: @content_width;
+  .centered()
+}
+
+.clear {
+  height: @footer_height;
+  clear: both;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix:before, clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  visibility: hidden;
 }
