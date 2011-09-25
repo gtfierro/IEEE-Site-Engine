@@ -4,16 +4,16 @@
       <h2>Form is invalid</h2>
       <ul>
         <% for message in @signup.errors.full_messages %>
-          <li><%= message %></li>
+        <li><%= message %></li>
         <% end %>
       </ul>
     </div>
-  <% end %>
-  <p>
+    <% end %>
+<p>
     <%= f.label :role %><br />
     <%= f.text_field :role %>
-  </p>
-	<%= f.hidden_field :event_id, :value => @e.id %>
+</p>
+<%= f.hidden_field :event_id, :value => @e.id %>
 
-  <p class="button"><%= f.submit %></p>
+<p class="button"><%= f.submit %></p>
 <% end %>
