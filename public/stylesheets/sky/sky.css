@@ -46,10 +46,17 @@ a {
   margin-right: auto;
   display: block;
 }
-#sidebar {
+#main #sidebar {
   float: right;
+  margin: 0 10px;
   padding: 0;
   width: 230px;
+}
+#main #content {
+  width: 70%;
+  margin: 0 10px;
+  min-height: 100%;
+  text-align: justify;
 }
 #footer {
   background: url("../../images/sky/usernav_bg.png");
@@ -62,9 +69,7 @@ a {
   width: 920px;
   min-width: 920px;
   color: #616161;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+  margin: 0 10px;
 }
 .clear {
   height: 70px;
@@ -120,11 +125,6 @@ a {
 .event .description {
   padding: 1em 0;
   font-size: 13px;
-}
-#page_body {
-  width: 70%;
-  min-height: 100%;
-  text-align: justify;
 }
 blockquote, address {
   color: #616161;
