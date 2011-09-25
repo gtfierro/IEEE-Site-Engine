@@ -1,63 +1,76 @@
 @import "globals";
 
-#navigation {
+#header {
+  background: url("../../images/sky/header_bg.png");
+  height: @header_height;
+  border-width: 0px 10px 0px 0px;
 }
 
-.event_title {
-	color: #343434;
-	font-size: 17px;
-	line-height: 2em;
+#header .content {
+    width: @content_width;
+    padding-top: (@header_height - @navigation_height) / 2;
+    overflow: auto;
+    .centered();
 }
 
-.event_description {
-	padding-top: 0.5em;
-	font-size: 12px;
-	color: #616161;
+#header .content #navigation {
+  padding: 0px;
+  margin: 70px 10px 0px 0px;
+  list-style-type: none;
+  .floater(block, right);
+  width: @navigation_width;
+
+  a {
+    background: url("../../images/sky/navigation.png");
+    height: 11px;
+    text-indent: -9000px;
+    .floater(block, left);
+   
+     &.link1 {
+        .set_navigation(0px, 42px, 21px);
+     }
+
+     &.link2 {
+        .set_navigation(63px, 54px, 21px) 
+     }
+
+     &.link3 {
+         .set_navigation(138px, 168px, 18px);
+     }
+
+     &.link4 {
+         .set_navigation(324px, 46px, 21px);
+     }
+
+     &.link5 {
+         .set_navigation(391px, 70px, 24px);
+     }
+  }
 }
 
-.event_location, .event_time {
-	color: #616161;
-	font-size: 12px;
-}
 
-#posts {
-	width: 65%;
-	margin: 2% 0%;
-}
+#user_nav {
+  background: url("../../images/sky/usernav_bg.png");
+  height: @usernav_height;
+  
+    a {
+		float: right;
+		margin-right: 10px;
+		padding-top: 5px;
+		
+		&.link_login {
+            .set_navigation(499px, -1px, 20px);
+        }
+        
+        &.link_logout {
+            .set_navigation(499px, -1px, 20px, 2);
+        }
+	}
+} 
 
-.post_content {
-	text-align: justify;
-	font-size: 13px;
-	color: #343434;
+#logo {
+  margin-left: 10px;
+  display: inline-block;
+  width: 287px;
+  height: 120px;
 }
-
-.post_time {
-	color: #616161;
-	font-size: 13px;
-}
-
-.post_title {
-	line-height: 2em;
-	font-size: 20px;
-}
- 
-.post_img {
-	float: right;
-	margin: 5% 0% 5% 5%;
-}
-
-.upcoming_events_title {
-  font-size: 20px;
-  line-height: 2em;
-}
-
-.calendar {
-  float: right;
-  border-style: none;
-}
-
-#page_body {
-  width: 70%;
-  min-height: 100%;
-}
-
