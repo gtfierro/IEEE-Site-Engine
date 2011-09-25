@@ -31,10 +31,9 @@ class EventsController < ApplicationController
   
   def show
     if params[:id] == "all"
-      puts 'hi'
       @e = Event.all
+      @user = current_user
       render "all"
-
     else
       if not Event.exists?(params[:id])
         respond_to do |format|
