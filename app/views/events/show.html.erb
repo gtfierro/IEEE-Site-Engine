@@ -1,18 +1,20 @@
-<div class="event_title"><%= @e.title %></div>
-<div class="event_location">
-  <%= @e.location %>
-</div>
-<div class="event_description">
-  <%= @e.description %>
-</div>
-<div class="event_time">
-  <b><%= @e.event_start.strftime("Start: %a %d %b - %I:%M %p") %></b>
-  <br />
-  <b><%= @e.event_end.strftime("End: %a %d %b - %I:%M %p") %></b>
+<h1><%= @e.title %></h1>
+<div class="event">
+  <div class="location">
+    <%= @e.location %>
+  </div>
+  <div class="time">
+    <%= @e.event_start.strftime("%m/%d, %l:%M %p") %>
+    <%= @e.event_end.strftime("- %l:%M %p") %>
+  </div>
+  <div class="description">
+    <%= @e.description %>
+  </div>
 </div>
 
+<% if current_user %>
 <% if Signup.where(:event_id => @e.id).length > 0 %>
-<h4>Attending</h4>
+<h2>Attending</h2>
 <% if has_permission %>
 <p>
   You can click the email addresses to change the "attended" flag
@@ -20,21 +22,22 @@
 <% end %>
 <% end %>
 
-
 <% if Signup.exists? %>
 <% @e.users.each do |u| %>
-<p>
-  <% s = u.signups.where(:event_id => @e.id).first%>
-  <% if has_permission %>
-  <%= link_to u.email, user_signup_mark_path(u, s.id), :method => "post" %> - Attended: <%= s.attended %>
-  <% else %>
-  <%= link_to u.email, user_signup_mark_path(u, s.id), :method => "post" %> - Attended: <%= s.attended%>
-  <% end %>
-</p>
+<% s = u.signups.where(:event_id => @e.id).first%>
+<% if has_permission %>
+<%= link_to u.email, user_signup_mark_path(u, s.id), :method => "post" %> - Attended: <%= s.attended %>
+<% else %>
+<%= link_to u.email, user_signup_mark_path(u, s.id), :method => "post" %> - Attended: <%= s.attended%>
 <% end %>
+<br/>
 <% end %>
-<% if current_user %>
-<%= link_to 'Edit', edit_event_path %>
 <% end %>
 
-<%= link_to 'Back', :back %>
+<div class="option">
+  <%= link_to "Edit", edit_event_path(@e) %>
+</div>
+<div class="option">
+  <%= link_to "Delete", event_path(p), :method => "delete" %>
+</div>
+<% end %>

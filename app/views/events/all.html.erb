@@ -1,17 +1,20 @@
+<h1>All Events</h1>
 <% @e.each do |e|%>
-<div class="event_title"><%= link_to e.title, event_path(e) %></div>
-<div class="event_location">
-  <%= e.location %>
-</div>
-<div class="event_description">
-  <%= e.description %>
-</div>
-<div class="event_time">
-  <b><%= e.event_start.strftime("Start: %a %d %b - %I:%M %p") %></b>
-  <br />
-  <b><%= e.event_end.strftime("End: %a %d %b - %I:%M %p") %></b>
+<div class="event">
+  <h2><%= link_to e.title, event_path(e) %></h2>
+  <div class="location">
+    <%= e.location %>
+  </div>
+  <div class="time">
+    <%= e.event_start.strftime("%m/%d, %l:%M %p") %>
+    <%= e.event_end.strftime("- %l:%M %p") %>
+  </div>
+  <div class="description">
+    <%= e.description %>
+  </div>
 </div>
 <% end %>
-<br />
-<br />
-<%= link_to 'Back', :back %>
+<% if current_user %>
+<%= link_to 'Create New Event', new_event_path %>
+<% end %>
+
