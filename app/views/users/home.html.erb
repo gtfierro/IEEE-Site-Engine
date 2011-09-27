@@ -4,7 +4,7 @@
   <div class="post_time"><%= p.created_at.strftime("%B %e")%></div>
   <h1><%= p.title %></h1>
   <div class="content">
-    <%= render :inline => p.content %>
+    <%= h(p.content.html_safe) %>
   </div>
   <% if current_user %>
   <div class="option">

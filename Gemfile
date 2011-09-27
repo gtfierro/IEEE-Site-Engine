@@ -6,6 +6,7 @@ gem 'jquery-rails', '>= 1.0.12'
 gem 'jammit'
 gem 'less'
 gem 'ruby-picasa'
+gem 'sanitize'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
