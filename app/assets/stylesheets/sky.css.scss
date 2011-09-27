@@ -3,7 +3,7 @@
 html,body {
     padding: 0px;
     margin: 0px;
-    background: url("../../images/sky/body_bg.png");
+    background: url("/assets/images/sky/body_bg.png");
     font-family: 'Droid Sans', Arial;
     font-size: 13px;
     color: #343434;
@@ -81,6 +81,20 @@ a {
 .clear {
   height: $footer_height;
   clear: both;
+}
+#user_nav {
+	background: url("/assets/images/sky/usernav_bg.png");
+	height: $usernav_height;
+}
+
+#page_header {
+    background: url("/assets/images/sky/header_bg.png");
+    height: $header_height;
+	border-width: 0px 10px 0px 0px;
+
+    div.content {
+        padding-top: ($header_height - $navigation_height) / 2;
+    }
 }
 
 .clearfix:after {
