@@ -1,0 +1,18 @@
+<% @p.each do |a| %>
+	<p>
+		<%= a[:title] %>
+	</p>
+<% end %>
+
+<br />
+<br />
+
+<% @p.each do |a| %>
+	<p>
+		<%= a[:title] %> <br />
+		<% Picasa.photos(:album_id => a[:id])[:photos].each do |p| %>
+			<%= image_tag p[:thumbnail_1] %>
+		<% end %>
+	</p>
+	<br />
+<% end %>
