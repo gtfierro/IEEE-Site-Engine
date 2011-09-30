@@ -5,7 +5,7 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'jquery-rails', '>= 1.0.12'
 gem 'jammit'
 gem 'less'
-gem 'ruby-picasa'
+gem 'picasa'
 gem 'sanitize'
 
 # Bundle edge Rails instead:

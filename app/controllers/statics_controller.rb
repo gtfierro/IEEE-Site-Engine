@@ -8,5 +8,9 @@ class StaticsController < ApplicationController
 
   def indrel
   end
+  
+  def photos
+    @p = Picasa.albums
+  end
 
 end

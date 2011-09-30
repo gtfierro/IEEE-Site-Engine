@@ -6,6 +6,7 @@ Ieee::Application.routes.draw do
   get "signup" => "users#new", :as => "signup"
   get "home" => "users#home", :as => "home"
   get "about" => "statics#about", :as => "about"
+  get "photos" => "statics#photos", :as => "photos"
   get "users/edit" => "users#edit"
   get "hope" => "statics#hope", :as => "hope"
   get "indrel" => "statics#indrel", :as => "indrel"

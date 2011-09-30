@@ -50,7 +50,7 @@
 			<key>filename</key>
 			<string>Gemfile</string>
 			<key>lastUsed</key>
-			<date>2011-09-19T17:43:49Z</date>
+			<date>2011-09-30T06:23:06Z</date>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -131,6 +131,8 @@
 			<string>.git</string>
 		</dict>
 		<dict>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>less</string>
 			<key>regexFolderFilter</key>

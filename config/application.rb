@@ -39,6 +39,10 @@ module Ieee
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
     
+    Picasa.config do |c|
+      c.google_user = 'ieeeucb'
+    end
+    
     #Globals
     THEME = "sky"
   end
