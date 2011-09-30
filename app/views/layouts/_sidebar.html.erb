@@ -1,0 +1,44 @@
+<div id="sidebar">
+  <h1>Photos</h1>
+  <%= link_to "View Photos", photos_url %><br/>
+  <% featured_albums.each do |a| %>
+  <%= link_to image_tag(a[:thumbnail], :size => "35x35"), a[:slideshow]%>
+  <% end %>
+  <h1>Upcoming Events</h1>
+  <%= link_to "View Calendar", event_path("all") %><br/>
+  <% upcoming_events.each do |e| %>
+  <div class="event">
+    <div class="title_wrapper">
+      <div class="title">
+	<%= link_to e.title, event_path(e) %>
+      </div>
+      <div class="calendar">
+	<a href="#">
+	  <%= image_tag "sky/calendar.png", :title => "Add to Google Calendar", :alt => "Add to Google Calendar" %>
+	</a>
+      </div>
+    </div>
+    <div class="location">
+      <%= e.location %>
+    </div>
+    <div class="time">
+      <%= e.event_start.strftime("%m/%d, %l:%M %p") %>
+      <%= e.event_end.strftime("- %l:%M %p") %>
+    </div>
+    <div class="description">
+      <%= e.description %>
+    </div>
+    <% if current_user %>
+    <div class="option">
+      <%= link_to "Edit", edit_event_path(e) %>
+      </div>
+    <div class="option">
+      <%= link_to "Delete", event_path(e), :method => "delete" %>
+    </div>
+      <div class="option">
+	<%= link_to "Sign up", new_event_signup_path(e) %>
+      </div>
+      <% end %>
+  </div>
+  <% end %>
+</div>

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  helper_method :current_user, :upcoming_events, :recent_posts, :has_permission
+  helper_method :current_user, :upcoming_events, :recent_posts, :has_permission, :featured_albums
   private
   
   def has_permission
@@ -24,5 +24,9 @@ class ApplicationController < ActionController::Base
   
   def recent_posts
     p = Post.all[0,3].reverse
+  end
+
+  def featured_albums
+    a = Picasa.albums
   end
 end
