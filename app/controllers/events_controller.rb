@@ -31,7 +31,7 @@ class EventsController < ApplicationController
   
   def show
     if params[:id] == "all"
-      @e = Event.all
+      @e = Event.order("event_start desc")
       @user = current_user
       render "all"
     else

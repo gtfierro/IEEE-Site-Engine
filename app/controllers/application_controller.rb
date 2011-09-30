@@ -23,6 +23,6 @@ class ApplicationController < ActionController::Base
   end
   
   def recent_posts
-    p = Post.all[0,3]
+    p = Post.all[0,3].reverse
   end
 end

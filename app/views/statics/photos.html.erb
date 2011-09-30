@@ -1,18 +1,11 @@
+<h1>Photo Albums</h1>
 <% @p.each do |a| %>
-	<p>
-		<%= a[:title] %>
-	</p>
-<% end %>
-
-<br />
-<br />
-
-<% @p.each do |a| %>
-	<p>
-		<%= a[:title] %> <br />
-		<% Picasa.photos(:album_id => a[:id])[:photos].each do |p| %>
-			<%= image_tag p[:thumbnail_1] %>
-		<% end %>
-	</p>
-	<br />
+<h2><%= a[:title] %></h2> 
+<%= link_to "Slideshow", a[:slideshow] %>
+<p>
+  <% Picasa.photos(:album_id => a[:id])[:photos].each do |p| %>
+  <a href="<%= p[:photo] %>">
+  <%= image_tag p[:thumbnail_1] %></a>
+  <% end %>
+</p>
 <% end %>
