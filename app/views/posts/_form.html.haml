@@ -6,14 +6,12 @@
         - for message in @p.errors.full_messages
           %li= message
   %p
-    = f.label :title
-    %br/
+    #label
+      = f.label :title
     = f.text_field :title
   %p
-    = f.label :content
+    #label
+      = f.label :content
     %br/
     = f.text_area :content
-  %p
-    = f.label	:photo
-    = f.file_field	:photo
   %p.button= f.submit

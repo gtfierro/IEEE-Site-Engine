@@ -6,23 +6,24 @@
         - for message in @e.errors.full_messages
           %li= message
   %p
-    = f.label :title
-    %br/
+    #label
+      = f.label :title
     = f.text_field :title
   %p
-    = f.label :location
-    %br/
+    #label
+      = f.label :location
     = f.text_field :location
   %p
-    = f.label :description
+    #label
+      = f.label :description
     %br/
     = f.text_area :description
   %p
-    = f.label :event_start
-    %br/
+    #label
+      = f.label :event_start
     = f.datetime_select :event_start
   %p
-    = f.label :event_end
-    %br/
+    #label
+      = f.label :event_end
     = f.datetime_select :event_end
   %p.button= f.submit
