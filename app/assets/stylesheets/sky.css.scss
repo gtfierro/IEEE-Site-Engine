@@ -165,6 +165,7 @@ textarea {
   margin-bottom: 2%;
 
   .content {
+    width: $main_content_width;
     text-align: justify;
     font-size: 13px;
   }
@@ -199,4 +200,12 @@ blockquote, address {
 
 .photos {
   margin: 10px 0px;
+}
+
+#club_picture {
+  width: 500px;
+  @include centered();
+  margin-bottom: 10px;
+  padding: 2px;
+  border: 1px solid #225897;
 }
