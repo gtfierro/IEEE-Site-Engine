@@ -31,6 +31,16 @@ a {
   text-decoration: none;
 }
 
+textarea {
+  border: 1px solid #225897;
+  width: $main_content_width;
+  resize: none;
+}
+
+input {
+  border: 1px solid #225897;
+}
+
 #container {
   min-width: $content_width;
   min-height: 100%;
@@ -55,10 +65,9 @@ a {
   }
 
   #content {
-    width: 70%;
+    width: $main_content_width;
     margin: 0 10px;
     min-height: 100%;
-    max-width: 666px;
     text-align: justify;
   }
 }
@@ -94,6 +103,10 @@ a {
     div.content {
         padding-top: ($header_height - $navigation_height) / 2;
     }
+}
+
+#photo_wrapper {
+  margin: 10px 0px;
 }
 
 .event {
@@ -165,4 +178,14 @@ blockquote, address {
   color: #616161;
   padding: 0 30px;
   border-left: 2px solid #225897;
+}
+
+.album {
+  display: inline-block;
+  width: 310px;
+  text-align: center;
+}
+
+.photos {
+  margin: 10px 0px;
 }
