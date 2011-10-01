@@ -1,71 +1,71 @@
 @import "globals";
 
+#user_nav {
+  background: url("/assets/images/sky/usernav_bg.png");
+  height: $usernav_height;
+  a {
+    float: right;
+    margin-right: 10px;
+    padding-top: 5px;
+
+    &.link_login {
+        @include set_navigation(499px, -1px, 20px);
+    }
+
+    &.link_logout {
+        @include set_navigation(499px, -1px, 20px, 2);
+    }
+  }
+}
+
 #header {
   background: url("/assets/images/sky/header_bg.png");
   height: $header_height;
   border-width: 0px 10px 0px 0px;
-}
 
-#header .content {
+
+  .content {
     width: $content_width;
     padding-top: ($header_height - $navigation_height) / 2;
     overflow: auto;
     @include centered();
-}
 
-#header .content #navigation {
-  padding: 0px;
-  margin: 70px 10px 0px 0px;
-  list-style-type: none;
-  @include floater(block, right);
-  width: $navigation_width;
+    #navigation {
+      padding: 0px;
+      margin: 70px 10px 0px 0px;
+      list-style-type: none;
+      @include floater(block, right);
+      width: $navigation_width;
 
-  a {
-    background: url("/assets/images/sky/navigation.png");
-    height: 11px;
-    text-indent: -9000px;
-    @include floater(block, left);
-   
-     &.home_link {
-        @include set_navigation(0px, 42px, 21px);
-     }
+      a {
+        background: url("/assets/images/sky/navigation.png");
+        height: 11px;
+        text-indent: -9000px;
+        @include floater(block, left);
 
-     &.event_link {
-        @include set_navigation(63px, 54px, 21px)
-     }
+         &.home_link {
+            @include set_navigation(0px, 42px, 21px);
+         }
 
-     &.ir_link {
-         @include set_navigation(138px, 168px, 18px);
-     }
+         &.events_link {
+            @include set_navigation(63px, 54px, 21px)
+         }
 
-     &.hope_link {
-         @include set_navigation(324px, 46px, 21px);
-     }
+         &.ir_link {
+             @include set_navigation(138px, 168px, 18px);
+         }
 
-     &.about_link {
-         @include set_navigation(391px, 70px, 24px);
-     }
+         &.hope_link {
+             @include set_navigation(324px, 46px, 21px);
+         }
+
+         &.about_link {
+             @include set_navigation(391px, 70px, 24px);
+         }
+      }
+    }
   }
 }
-
-#user_nav {
-  background: url("/assets/images/sky/usernav_bg.png");
-  height: $usernav_height;
-  
-    a {
-		float: right;
-		margin-right: 10px;
-		padding-top: 5px;
-		
-		&.link_login {
-            @include set_navigation(499px, -1px, 20px);
-        }
-        
-        &.link_logout {
-            @include set_navigation(499px, -1px, 20px, 2);
-        }
-	}
-} 
 
 #logo {
   margin-left: 10px;

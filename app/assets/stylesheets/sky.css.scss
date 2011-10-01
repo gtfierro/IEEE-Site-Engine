@@ -46,21 +46,21 @@ a {
   padding: 20px 0;
   overflow: auto;
   @include centered();
-}
 
-#main #sidebar {
-  float: right;
-  margin: 0 10px;
-  padding: 0;
-  width: $sidebar_width;
-}
+  #sidebar {
+    float: right;
+    margin: 0 10px;
+    padding: 0;
+    width: $sidebar_width;
+  }
 
-#main #content {
-  width: 70%;
-  margin: 0 10px;
-  min-height: 100%;
-	max-width: 666px;
-  text-align: justify;
+  #content {
+    width: 70%;
+    margin: 0 10px;
+    min-height: 100%;
+    max-width: 666px;
+    text-align: justify;
+  }
 }
 
 #footer {
@@ -68,16 +68,15 @@ a {
   height: $footer_height;
   min-width: $content_width;
   clear:both;
-}
 
-#footer #copyright {
-  padding-top: 10px;
-  width: $content_width;
-  min-width: $content_width;
-  color: #616161;
-  @include centered();
+  #copyright {
+    padding-top: 10px;
+    width: $content_width;
+    min-width: $content_width;
+    color: #616161;
+    @include centered();
+  }
 }
-
 .clear {
   height: $footer_height;
   clear: both;
@@ -97,6 +96,36 @@ a {
     }
 }
 
+.event {
+  margin: 10px 0px;
+
+  .title_wrapper {
+    font-size: 17px;
+    height: auto;
+
+    .title {
+      display: inline-block;
+      width: 200px;
+    }
+
+    .calendar {
+      display: inline-block;
+      width: 25px;
+      border-style: none;
+    }
+  }
+
+  .location, .time {
+    color: #616161;
+  }
+
+ .description {
+    padding: 1em 0;
+    font-size: 13px;
+  }
+}
+
+
 .clearfix:after {
   clear: both;
 }
@@ -110,17 +139,17 @@ a {
 
 .post {
   margin-bottom: 2%;
-}
 
-.post .content {
-  text-align: justify;
-  font-size: 13px;
+  .content {
+    text-align: justify;
+    font-size: 13px;
+  }
 }
 
 .post_time {
   color: #616161;
 }
- 
+
 .post_img {
 	float: right;
 	margin: 5% 0% 5% 5%;
@@ -130,35 +159,6 @@ a {
   color: #616161;
   display: inline;
   margin: 5px 5px 0 0;
-}
-
-.event {
-  margin: 10px 0px;
-}
-
-.event .title_wrapper {
-  font-size: 17px;
-  height: auto;
-}
-
-.event .title_wrapper .title {
-  display: inline-block;
-  width: 200px;
-}
-
-.event .title_wrapper .calendar {
-  display: inline-block;
-  width: 25px;
-  border-style: none;
-}
-
-.event .location, .time {
-  color: #616161;
-}
-
-.event .description {
-  padding: 1em 0;
-  font-size: 13px;
 }
 
 blockquote, address {
