@@ -78,7 +78,6 @@ textarea {
     width: $main_content_width;
     margin: 0 10px;
     min-height: 100%;
-    text-align: justify;
   }
 }
 
@@ -159,11 +158,11 @@ textarea {
 
 .post {
   margin-bottom: 2%;
+  max-width: $main_content_width;
 
-  .content {
-    width: $main_content_width;
-    text-align: justify;
-    font-size: 13px;
+  img {
+    margin: 5px 0;
+    max-width: $main_content_width;
   }
 }
 
