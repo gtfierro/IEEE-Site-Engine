@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
   
   def create
-    Sanitize.clean(params[:post][:content], Sanitize::Config::BASIC)
+   params[:post][:content] = Sanitize.clean(params[:post][:content], Sanitize::Config::BASIC)
     @p = Post.new(params[:post])
     respond_to do |format|
       if @p.save
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   end
   
   def update
-    Sanitize.clean(params[:post][:content], Sanitize::Config::BASIC)
+    params[:post][:content] = Sanitize.clean(params[:post][:content], Sanitize::Config::BASIC)
     if not Post.exists?(params[:id])
       redirect_to home_url, :notice => "Post not found"
     else
