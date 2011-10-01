@@ -1,0 +1,31 @@
+#sidebar
+  %h1 Photos
+  = link_to "View Photos", photos_url
+  %br/
+  - featured_albums.each do |a|
+    = link_to image_tag(a[:thumbnail], :size => "35x35"), a[:slideshow]
+  %h1 Upcoming Events
+  = link_to "View Calendar", event_path("all")
+  %br/
+  - upcoming_events.each do |e|
+    .event
+      .title_wrapper
+        .title
+          = link_to e.title, event_path(e)
+        .calendar
+          %a{:href => "#"}
+            = image_tag "sky/calendar.png", :title => "Add to Google Calendar", :alt => "Add to Google Calendar"
+      .location
+        = e.location
+      .time
+        = e.event_start.strftime("%m/%d, %l:%M %p")
+        = e.event_end.strftime("- %l:%M %p")
+      .description
+        = e.description
+      - if current_user
+        .option
+          = link_to "Edit", edit_event_path(e)
+        .option
+          = link_to "Delete", event_path(e), :method => "delete"
+        .option
+          = link_to "Sign up", new_event_signup_path(e)

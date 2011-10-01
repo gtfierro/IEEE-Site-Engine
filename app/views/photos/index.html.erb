@@ -1,5 +1,0 @@
-<h1>Photo Albums</h1>
-<% @p.each do |a| %>
-<h2><%= a[:title] %></h2> 
-<%= link_to image_tag(a[:thumbnail]), photo_path(a[:id]) %>
-<% end %>
