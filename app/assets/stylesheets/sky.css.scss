@@ -42,17 +42,16 @@ input {
 }
 
 #container {
+  margin: 0 auto (-1)*$footer_height;
   min-width: $content_width;
   min-height: 100%;
 }
 
 #main {
   width: $content_width;
-  height: auto !important;
-  min-height: 100%;
   height: 100%;
   min-width: $content_width;
-  margin: 0 auto -$footer_height;
+  margin: 0 auto;
   padding: 20px 0;
   overflow: auto;
   @include centered();
@@ -73,7 +72,7 @@ input {
 }
 
 #footer {
-  background: url("/assets/images/sky/usernav_bg.png");
+  background: url("../images/sky/usernav_bg.png");
   height: $footer_height;
   min-width: $content_width;
   clear:both;
@@ -91,12 +90,12 @@ input {
   clear: both;
 }
 #user_nav {
-	background: url("/assets/images/sky/usernav_bg.png");
+	background: url("../images/sky/usernav_bg.png");
 	height: $usernav_height;
 }
 
 #page_header {
-    background: url("/assets/images/sky/header_bg.png");
+    background: url("../images/sky/header_bg.png");
     height: $header_height;
 	border-width: 0px 10px 0px 0px;
 
