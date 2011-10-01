@@ -1,5 +1,10 @@
 #navbar
   #user_nav
+    #flash
+      - flash.each do |type, message|
+        %div{:class => "message #{type}"}
+          %p
+            = message
     - if User.exists? and current_user
       %a.link_logout{:href => "/logout"} LOGOUT
       %a.link_logout{:href => "/users/edit"} USER SETTINGS

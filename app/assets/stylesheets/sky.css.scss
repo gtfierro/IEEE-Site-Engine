@@ -71,7 +71,6 @@ textarea {
   #sidebar {
     float: right;
     margin: 0 10px;
-    padding: 0;
     width: $sidebar_width;
   }
 
@@ -97,13 +96,10 @@ textarea {
     @include centered();
   }
 }
+
 .clear {
   height: $footer_height;
   clear: both;
-}
-#user_nav {
-	background: url("../images/sky/usernav_bg.png");
-	height: $usernav_height;
 }
 
 #page_header {
