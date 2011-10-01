@@ -1,0 +1,9 @@
+#main.clearfix
+  = render :partial => 'layouts/sidebar'
+  .flash
+    - flash.each do |type, message|
+      %div{:class => "message #{type}"}
+        %p
+          = message
+  #content
+    = yield

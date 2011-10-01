@@ -1,0 +1,168 @@
+@import "globals";
+
+html,body {
+    padding: 0px;
+    margin: 0px;
+    background: url("/assets/images/sky/body_bg.png");
+    font-family: 'Droid Sans', Arial;
+    font-size: 13px;
+    color: #343434;
+    height: 100%;
+    min-width: $content_width;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  padding: 0;
+  margin: 0 0 10px 0;
+  vertical-align: baseline;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+a {
+  color: #225897;
+  text-decoration: none;
+}
+
+#container {
+  min-width: $content_width;
+  min-height: 100%;
+}
+
+#main {
+  width: $content_width;
+  height: auto !important;
+  min-height: 100%;
+  height: 100%;
+  min-width: $content_width;
+  margin: 0 auto -$footer_height;
+  padding: 20px 0;
+  overflow: auto;
+  @include centered();
+
+  #sidebar {
+    float: right;
+    margin: 0 10px;
+    padding: 0;
+    width: $sidebar_width;
+  }
+
+  #content {
+    width: 70%;
+    margin: 0 10px;
+    min-height: 100%;
+    max-width: 666px;
+    text-align: justify;
+  }
+}
+
+#footer {
+  background: url("/assets/images/sky/usernav_bg.png");
+  height: $footer_height;
+  min-width: $content_width;
+  clear:both;
+
+  #copyright {
+    padding-top: 10px;
+    width: $content_width;
+    min-width: $content_width;
+    color: #616161;
+    @include centered();
+  }
+}
+.clear {
+  height: $footer_height;
+  clear: both;
+}
+#user_nav {
+	background: url("/assets/images/sky/usernav_bg.png");
+	height: $usernav_height;
+}
+
+#page_header {
+    background: url("/assets/images/sky/header_bg.png");
+    height: $header_height;
+	border-width: 0px 10px 0px 0px;
+
+    div.content {
+        padding-top: ($header_height - $navigation_height) / 2;
+    }
+}
+
+.event {
+  margin: 10px 0px;
+
+  .title_wrapper {
+    font-size: 17px;
+    height: auto;
+
+    .title {
+      display: inline-block;
+      width: 200px;
+    }
+
+    .calendar {
+      display: inline-block;
+      width: 25px;
+      border-style: none;
+    }
+  }
+
+  .location, .time {
+    color: #616161;
+  }
+
+ .description {
+    padding: 1em 0;
+    font-size: 13px;
+  }
+}
+
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix:before, clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.post {
+  margin-bottom: 2%;
+
+  .content {
+    text-align: justify;
+    font-size: 13px;
+  }
+}
+
+.post_time {
+  color: #616161;
+}
+
+.post_img {
+	float: right;
+	margin: 5% 0% 5% 5%;
+}
+
+.option, {
+  color: #616161;
+  display: inline;
+  margin: 5px 5px 0 0;
+}
+
+blockquote, address {
+  color: #616161;
+  padding: 0 30px;
+  border-left: 2px solid #225897;
+}

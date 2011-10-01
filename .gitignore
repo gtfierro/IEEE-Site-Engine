@@ -2,4 +2,12 @@
 db/*.sqlite3
 log/*.log
 tmp/
+tmp/**/*
 .project
+.idea/
+.sass-cache/
+config/database.yml
+config/app_config.yml
+.rvmrc
+.rvmrc.09.18.2011-14:32:31
+*~

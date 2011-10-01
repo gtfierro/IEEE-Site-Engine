@@ -1,0 +1,29 @@
+%h1= @e.title
+.event
+  .location
+    = @e.location
+  .time
+    = @e.event_start.strftime("%m/%d, %l:%M %p")
+    = @e.event_end.strftime("- %l:%M %p")
+  .description
+    = @e.description
+- if current_user
+  - if Signup.where(:event_id => @e.id).length > 0
+    %h2 Attending
+    - if has_permission
+      %p
+        You can click the email addresses to change the "attended" flag
+  - if Signup.exists?
+    - @e.users.each do |u|
+      - s = u.signups.where(:event_id => @e.id).first
+      - if has_permission
+        = link_to u.email, user_signup_mark_path(u, s.id), :method => "post"
+        \- Attended: #{s.attended}
+      - else
+        = link_to u.email, user_signup_mark_path(u, s.id), :method => "post"
+        \- Attended: #{s.attended}
+      %br/
+  .option
+    = link_to "Edit", edit_event_path(@e)
+  .option
+    = link_to "Delete", event_path(p), :method => "delete"

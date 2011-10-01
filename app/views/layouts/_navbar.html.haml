@@ -1,0 +1,22 @@
+#navbar
+  #user_nav
+    - if User.exists? and current_user
+      %a.link_logout{:href => "/logout"} LOGOUT
+      %a.link_logout{:href => "/users/edit"} USER SETTINGS
+    - else
+      %a.link_login{:href => "/login"} LOGIN
+  #header
+    .content
+      #logo
+        = image_tag "sky/b_ieee_small.png"
+      %ul#navigation
+        %li
+          = link_to "HOME", home_url, :class => "home_link"
+        %li
+          = link_to "EVENTS", event_path("all"), :class => "events_link"
+        %li
+          = link_to "INDUSTRIAL RELATIONS", indrel_url, :class => "ir_link"
+        %li
+          = link_to "H.O.P.E.", hope_url, :class => "hope_link"
+        %li
+          = link_to "ABOUT IEEE", about_url, :class => "about_link"

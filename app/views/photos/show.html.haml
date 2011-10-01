@@ -1,0 +1,5 @@
+%h1= @album[:title]
+= link_to "Slideshow", @album[:slideshow]
+%p
+  - @photos[:photos].each do |p|
+    = link_to image_tag(p[:thumbnail_1]), p[:photo]

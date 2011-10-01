@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    = google_font_link_tag 'Droid Sans'
+    = google_font_link_tag 'PT Sans'
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    %title Institute of Electrical and Electronics Engineers
+  %body
+    #container
+      = render :partial => 'layouts/navbar'
+      = render :partial => 'layouts/twocolumn'
+      .clear
+    #footer
+      #copyright
+        Copyright &copy; #{Time.now.year} UC Berkeley IEEE

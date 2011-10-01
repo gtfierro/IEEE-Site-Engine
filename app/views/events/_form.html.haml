@@ -1,0 +1,28 @@
+= form_for @e,  :html => { :multipart => true } do |f|
+  - if @e.errors.any?
+    .error_messages
+      %h2 Form is invalid
+      %ul
+        - for message in @e.errors.full_messages
+          %li= message
+  %p
+    = f.label :title
+    %br/
+    = f.text_field :title
+  %p
+    = f.label :location
+    %br/
+    = f.text_field :location
+  %p
+    = f.label :description
+    %br/
+    = f.text_area :description
+  %p
+    = f.label :event_start
+    %br/
+    = f.datetime_select :event_start
+  %p
+    = f.label :event_end
+    %br/
+    = f.datetime_select :event_end
+  %p.button= f.submit
