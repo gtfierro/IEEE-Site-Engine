@@ -8,65 +8,9 @@
     %title Institute of Electrical and Electronics Engineers
   %body
     #container
-      #user_nav
-        - if User.exists? and current_user
-          %a.link_logout{:href => "/logout"} LOGOUT
-          %a.link_logout{:href => "/users/edit"} USER SETTINGS
-        - else
-          %a.link_login{:href => "/login"} LOGIN
-          %a.link_signup{:href => "/signup"} SIGNUP
-      #page_header
-        .content
-          #logo
-          %ul#navigation
-            %li
-              %a.link1{:href => "/home"} HOME
-            %li
-              = link_to "EVENTS", event_path("all"), :class => "link2"
-            %li
-              = link_to "INDUSTRIAL RELATIONS", indrel_url, :class => "link3"
-            %li
-              = link_to "H.O.P.E.", hope_url, :class => "link4"
-            %li
-              = link_to "ABOUT IEEE", about_url, :class => "link5"
-      #wrapper.wat-cf
-        #sidebar
-          .upcoming_events_title Upcoming Events
-          = link_to "View Calendar", event_path("all")
-          %br/
-          - upcoming_events.each do |e|
-            %span.event_title
-              = link_to e.title, event_path(e)
-              %a{:href => "#"}= image_tag "calendar.png", :class => "calender", :title => "Add to Google Calendar", :alt => "Add to Google Calendar"
-            %br/
-            %span.event_location
-              = e.location
-            %br/
-            %span.event_time
-              = e.event_start.strftime("%m/%d, %l:%M %p")
-              = e.event_end.strftime("- %l:%M %p")
-            %br/
-            .event_description
-              = e.description
-            %br/
-            - if current_user
-              = link_to "Edit", edit_event_path(e)
-              = link_to "Destroy", event_path(e), :method => "delete"
-              = link_to "Sign Up", new_event_signup_path(e)
-          %br/
-          %br/
-          - if current_user
-            = link_to 'Create New Event', new_event_path
-            %br/
-            = link_to 'Create New Post', new_post_path
-        .flash
-          - flash.each do |type, message|
-            %div{:class => "message #{type}"}
-              %p
-                = message
-        #page_body
-          = yield
-          #featured_article
-      #footer
-        #copyright
-          Copyright &copy; #{Time.now.year} UC Berkeley IEEE
+      = render :partial => 'layouts/navbar'
+      = render :partial => 'layouts/twocolumn'
+      .clear
+    #footer
+      #copyright
+        Copyright &copy; #{Time.now.year} UC Berkeley IEEE

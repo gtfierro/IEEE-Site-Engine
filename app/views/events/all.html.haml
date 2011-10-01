@@ -1,14 +1,13 @@
 %h1 All Events
 - @e.each do |e|
-  .event_title= link_to e.title, event_path(e)
-  .event_location
-    = e.location
-  .event_description
-    = e.description
-  .event_time
-    %b= e.event_start.strftime("Start: %a %d %b - %I:%M %p")
-    %br/
-    %b= e.event_end.strftime("End: %a %d %b - %I:%M %p")
-%br/
-%br/
-= link_to 'Back', :back
+  .event
+    %h2= link_to e.title, event_path(e)
+    .location
+      = e.location
+    .time
+      = e.event_start.strftime("%m/%d, %l:%M %p")
+      = e.event_end.strftime("- %l:%M %p")
+    .description
+      = e.description
+- if current_user
+  = link_to 'Create New Event', new_event_path

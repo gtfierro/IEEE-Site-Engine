@@ -1,12 +1,14 @@
-#posts
-  - if Post.exists?
-    - recent_posts.each do |p|
+- if Post.exists?
+  - recent_posts.each do |p|
+    .post
       .post_time= p.created_at.strftime("%B %e")
-      .post_title= p.title
-      - if p.photo_file_name  != nil
-        .post_img= image_tag p.photo.url(:small)
-      .post_content
-        = p.content
+      %h1= p.title
+      .content
+        = h(p.content.html_safe)
       - if current_user
-        = link_to "Edit", edit_post_path(p)
-        = link_to "Destroy", post_path(p), :method => "delete"
+        .option
+          = link_to "Edit", edit_post_path(p)
+        .option
+          = link_to "Delete", post_path(p), :method => "delete"
+- if current_user
+  = link_to 'Create New Post', new_post_path

@@ -4,7 +4,6 @@ gem 'rails', '~> 3.1.0.0'
 gem 'haml'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'jquery-rails', '>= 1.0.12'
-gem 'jammit'
 gem 'picasa'
 gem 'sanitize'
 gem 'paperclip'
@@ -14,7 +13,6 @@ gem 'therubyracer'
 
 # For some reason, there are some dependencies on the less gem
 # So we are going to put it in here for now; remove it in the future
-gem 'less'
 
 # Gems used only for assets and not required
 # in production environments by default

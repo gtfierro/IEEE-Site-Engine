@@ -1,7 +1,7 @@
 @import "globals";
 
 #header {
-  background: url("../../images/sky/header_bg.png");
+  background: url("/assets/images/sky/header_bg.png");
   height: $header_height;
   border-width: 0px 10px 0px 0px;
 }
@@ -21,35 +21,35 @@
   width: $navigation_width;
 
   a {
-    background: url("../../images/sky/navigation.png");
+    background: url("/assets/images/sky/navigation.png");
     height: 11px;
     text-indent: -9000px;
     @include floater(block, left);
    
-     &.link1 {
+     &.home_link {
         @include set_navigation(0px, 42px, 21px);
      }
 
-     &.link2 {
+     &.event_link {
         @include set_navigation(63px, 54px, 21px)
      }
 
-     &.link3 {
+     &.ir_link {
          @include set_navigation(138px, 168px, 18px);
      }
 
-     &.link4 {
+     &.hope_link {
          @include set_navigation(324px, 46px, 21px);
      }
 
-     &.link5 {
+     &.about_link {
          @include set_navigation(391px, 70px, 24px);
      }
   }
 }
 
 #user_nav {
-  background: url("../../images/sky/usernav_bg.png");
+  background: url("/assets/images/sky/usernav_bg.png");
   height: $usernav_height;
   
     a {

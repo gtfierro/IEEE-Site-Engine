@@ -1,12 +1,13 @@
 //Constants
 $usernav_height: 30px;
 $header_height: 150px;
+$footer_height: 70px;
 $content_width: 920px;
+$sidebar_width: 230px;
 
 $navigation_height: 120px;
 $navigation_width: 558px;
 $navigation_layer_height: 12px;
-
 
 //Mixins
 @mixin centered($display_type: block) {
@@ -23,8 +24,8 @@ $navigation_layer_height: 12px;
 @mixin set_navigation($x_pos, $width, $padding, $level: 1) {
     width: $width;
     padding-right: $padding;
-    background-position: -$x_pos -((2 * $navigation_layer_height) * ($level - 1));
+    background-position: -$x_pos (-1)*((2 * $navigation_layer_height) * ($level - 1));
     &:hover {
-        background-position: -$x_pos -($navigation_layer_height * (2 * $level - 1));
+        background-position: -$x_pos (-1)*($navigation_layer_height * (2 * $level - 1));
     }
 }
