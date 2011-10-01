@@ -26,7 +26,7 @@ Ieee::Application.routes.draw do
   resources :signups
   resources :posts
   resources :statics
-  resources :photos
+  resources :photos, :only => [:show, :index]
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
