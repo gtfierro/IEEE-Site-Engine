@@ -31,14 +31,26 @@ a {
   text-decoration: none;
 }
 
-textarea {
-  border: 1px solid #225897;
-  width: $main_content_width;
-  resize: none;
+label {
+  font-size: 1.2em;
 }
 
-input {
+#label {
+  width: 75px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+textarea, input, select {
   border: 1px solid #225897;
+  padding: 2px 5px;
+  margin: 5px auto;
+  background: #F7F7F7;
+}
+
+textarea {
+  width: $main_content_width;
+  resize: none;
 }
 
 #container {
