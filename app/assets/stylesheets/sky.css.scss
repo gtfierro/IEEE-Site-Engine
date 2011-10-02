@@ -14,7 +14,7 @@ html,body {
 
 h1,h2,h3,h4,h5,h6 {
   padding: 0;
-  margin: 0 0 0.75em 0;
+  margin: 0 0 0.5em;
   vertical-align: baseline;
   font-weight: normal;
 }
@@ -25,6 +25,10 @@ h1 {
 
 h2 {
   font-size: 20px;
+}
+
+h4 {
+  font-style: italic;
 }
 
 a {
@@ -56,7 +60,7 @@ textarea {
 }
 
 p {
-  line-height: 1.3em;
+  line-height: 1.5em;
 }
 
 #container {
@@ -82,7 +86,6 @@ p {
 
   #content {
     width: $main_content_width;
-    line-height: 1.3em;
     margin: 0 10px;
     min-height: 100%;
   }
@@ -170,15 +173,15 @@ p {
   .content {
     overflow: auto;
     margin: 0.8em 0;
+    line-height: 1.5em
   }
 
   .time {
     color: #616161;
-    margin-bottom: 1em;
   }
 
   img {
-    margin: 0.75em;
+    margin: 1em;
     max-width: $main_content_width;
   }
 }
