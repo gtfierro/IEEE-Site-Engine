@@ -1,5 +1,5 @@
 %h1 Photo Albums
 - @p.each do |a|
   .album
-    %h2= a[:title]
+    %h3= a[:title]
     = link_to image_tag(a[:thumbnail]), photo_path(a[:id])

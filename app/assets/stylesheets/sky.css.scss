@@ -8,12 +8,13 @@ html,body {
     font-size: 13px;
     color: #343434;
     height: 100%;
+    text-align: justify;
     min-width: $content_width;
 }
 
 h1,h2,h3,h4,h5,h6 {
   padding: 0;
-  margin: 0 0 10px 0;
+  margin: 0 0 0.75em 0;
   vertical-align: baseline;
   font-weight: normal;
 }
@@ -54,6 +55,10 @@ textarea {
   resize: none;
 }
 
+p {
+  line-height: 1.3em;
+}
+
 #container {
   margin: 0 auto (-1)*$footer_height;
   min-width: $content_width;
@@ -77,6 +82,7 @@ textarea {
 
   #content {
     width: $main_content_width;
+    line-height: 1.3em;
     margin: 0 10px;
     min-height: 100%;
   }
@@ -158,32 +164,28 @@ textarea {
 }
 
 .post {
-  margin-bottom: 2%;
+  margin: 0 0 1em 0;
   max-width: $main_content_width;
 
   .content {
     overflow: auto;
+    margin: 0.8em 0;
+  }
+
+  .time {
+    color: #616161;
+    margin-bottom: 1em;
   }
 
   img {
-    margin: 10px 10px;
+    margin: 0.75em;
     max-width: $main_content_width;
   }
-}
-
-.post_time {
-  color: #616161;
-}
-
-.post_img {
-	float: right;
-	margin: 5% 0% 5% 5%;
 }
 
 .option, {
   color: #616161;
   display: inline;
-  margin: 5px 5px 0 0;
 }
 
 blockquote, address {

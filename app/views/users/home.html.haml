@@ -1,7 +1,7 @@
 - if Post.exists?
   - recent_posts.each do |p|
     .post
-      .post_time= p.created_at.strftime("%B %e")
+      .time= p.created_at.strftime("%B %e")
       %h1= p.title
       .content
         = h(p.content.html_safe)
