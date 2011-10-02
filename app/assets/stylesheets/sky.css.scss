@@ -161,8 +161,12 @@ textarea {
   margin-bottom: 2%;
   max-width: $main_content_width;
 
+  .content {
+    overflow: auto;
+  }
+
   img {
-    margin: 5px 0;
+    margin: 10px 10px;
     max-width: $main_content_width;
   }
 }
