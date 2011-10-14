@@ -90,7 +90,11 @@ p {
       width: 95px;
     }
     .sidebar_thumb {
-      margin-right: 2px;
+      margin-bottom: 2px;
+    }
+    img {
+      vertical-align: bottom;
+      margin-bottom: 5px;
     }
   }
 
@@ -99,6 +103,11 @@ p {
     margin: 0 10px;
     min-height: 100%;
   }
+}
+
+#photo_wrapper {
+  margin: 10px 0px 5px;
+  word-spacing: 2px;
 }
 
 #footer {
@@ -129,10 +138,6 @@ p {
     div.content {
         padding-top: ($header_height - $navigation_height) / 2;
     }
-}
-
-#photo_wrapper {
-  margin: 10px 0px;
 }
 
 .event {
