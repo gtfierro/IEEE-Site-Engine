@@ -82,6 +82,16 @@ p {
     float: right;
     margin: 0 10px;
     width: $sidebar_width;
+
+    #all_photos {
+      margin-left: 90px;
+      margin-top: -36px;
+      position: absolute;
+      width: 95px;
+    }
+    .sidebar_thumb {
+      margin-right: 2px;
+    }
   }
 
   #content {

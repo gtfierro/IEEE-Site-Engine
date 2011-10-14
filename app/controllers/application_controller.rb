@@ -19,14 +19,14 @@ class ApplicationController < ActionController::Base
   
   def upcoming_events
     #default to 3 events within 30 days from now
-    e = Event.where(:event_start => DateTime.now..DateTime.now+30.days).sort_by! {|event| event.event_start.to_i }[0,3]
+    Event.where(:event_start => DateTime.now..DateTime.now+30.days).sort_by! {|event| event.event_start.to_i }[0,3]
   end
   
   def recent_posts
-    p = Post.all[0,3].reverse
+    Post.first(3).reverse
   end
 
   def featured_albums
-    a = Picasa.albums
+    Picasa.albums.first(ApplicationHelper::THUMBNAILS_LIMIT)
   end
 end

@@ -1,4 +1,7 @@
 module ApplicationHelper
+
+  THUMBNAILS_LIMIT = 9
+
   def google_font_link_tag(family)
     tag(
       'link', {
