@@ -3,7 +3,7 @@
   = link_to "View All Albums", photos_url, :id => "all_photos"
   #photo_wrapper
     - featured_albums.each do |a|
-      = link_to image_tag(a[:thumbnail], :size => "75x75"), a[:slideshow], :class => "sidebar_thumb", :title => a[:title]
+      = link_to image_tag(a[:thumbnail], :size => "70x70"), a[:slideshow], :class => "sidebar_thumb", :title => a[:title]
   %h1 Upcoming Events
   = link_to "View Calendar", event_path("all")
   %br/

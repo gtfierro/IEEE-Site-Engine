@@ -91,11 +91,13 @@ p {
     }
     .sidebar_thumb {
       margin-bottom: 2px;
+      margin-right: 6px;
+      display: block;
+      float: left;
     }
     img {
       vertical-align: bottom;
       margin-bottom: 5px;
-      display: inline-block;
     }
   }
 
@@ -108,7 +110,6 @@ p {
 
 #photo_wrapper {
   margin: 10px 0px 5px;
-  word-spacing: 2px;
 }
 
 #footer {
