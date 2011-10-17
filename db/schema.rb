@@ -28,9 +28,6 @@ ActiveRecord::Schema.define(:version => 20111002011254) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
   end
 
   create_table "signups", :force => true do |t|
@@ -44,7 +41,6 @@ ActiveRecord::Schema.define(:version => 20111002011254) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.string   "username"
     t.string   "password_hash"
     t.string   "password_salt"
     t.datetime "created_at"
