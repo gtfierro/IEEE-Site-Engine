@@ -17,7 +17,9 @@ Ieee::Application.routes.draw do
   scope 'users', :as => :users do
     get '/new' => 'users#new', :as => :new
     post '/new' => 'users#create', :as => :create
-    match '/:id/edit' => 'users#edit', :via => [:get,:put,:delete]
+    get '/:id/edit' => 'users#edit', :as => :edit
+    put '/:id/edit' => 'users#update', :as => :update
+    delete '/:id/destroy' => 'users#destroy', :as => :destroy
     
     scope '/:user_id/signups' do
       post '/:id/mark' => 'signups#mark', :as => :mark

@@ -7,7 +7,7 @@
             = message
     - if User.exists? and current_user
       %a.link_logout{:href => "/logout"} LOGOUT
-      %a.link_logout{:href => users_path(current_user)} USER SETTINGS
+      %a.link_logout{:href => users_edit_path(current_user)} USER SETTINGS
     - else
       %a.link_login{:href => "/login"} LOGIN
   #header
