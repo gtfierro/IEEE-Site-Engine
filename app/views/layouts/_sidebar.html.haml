@@ -26,6 +26,6 @@
         .option
           = link_to "Edit", events_path(e)
         .option
-          = link_to "Delete", events_path(e), :method => "delete"
+          = link_to "Delete", events_destroy_path(e), :method => "delete"
         .option
           = link_to "Sign up", events_signups_new_path(e)

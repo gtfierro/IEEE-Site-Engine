@@ -17,13 +17,13 @@
     - @e.users.each do |u|
       - s = u.signups.where(:event_id => @e.id).first
       - if has_permission
-        = link_to u.email, user_signup_mark_path(u, s.id), :method => "post"
+        = link_to u.email, users_mark_path(u, s.id), :method => "post"
         \- Attended: #{s.attended}
       - else
-        = link_to u.email, user_signup_mark_path(u, s.id), :method => "post"
+        = link_to u.email, users_mark_path(u, s.id), :method => "post"
         \- Attended: #{s.attended}
       %br/
   .option
-    = link_to "Edit", edit_event_path(@e)
+    = link_to "Edit", events_path(@e)
   .option
-    = link_to "Delete", event_path(p), :method => "delete"
+    = link_to "Delete", events_destroy_path(p), :method => "delete"

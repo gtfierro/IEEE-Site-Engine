@@ -15,8 +15,12 @@ Ieee::Application.routes.draw do
   root :to => "users#home"
   
   scope 'users', :as => :users do
-    resources :signups do
-      post 'mark' => "signups#mark"
+    get '/new' => 'users#new', :as => :new
+    post '/new' => 'users#create', :as => :create
+    match '/:id/edit' => 'users#edit', :via => [:get,:put,:delete]
+    
+    scope '/:user_id/signups' do
+      post '/:id/mark' => 'signups#mark', :as => :mark
     end
   end
   
@@ -27,15 +31,15 @@ Ieee::Application.routes.draw do
   end
   
   scope 'events', :as  => :events do
-    get '/new' => 'events#new', :via => [:get,:post]
-    post '/new' => 'events#create'
-    get '/:id/edit' => 'events#edit', :via => [:get,:put,:delete]
-    put '/:id/edit' => 'events#update'
-    delete '/:id/edit' => 'events#destroy'
+    get '/new' => 'events#new', :as => :new
+    post '/new' => 'events#create', :as => :create
+    match '/:id/edit' => 'events#edit', :via => [:get,:put]
+    delete '/:id/destroy' => 'events#destroy', :as => :destroy
     get '/:id/show' => 'events#show', :as => :show
     
     scope '/:event_id/signups', :as => :signups do
-      get '/new' => 'signups#new', :via => [:get,:post], :as => :new
+      get '/new' => 'signups#new', :as => :new
+      post '/new' => 'signups#create', :as => :create
       post '/:id/mark' => 'signups#mark', :as => :mark
     end
     
