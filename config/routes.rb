@@ -26,12 +26,27 @@ Ieee::Application.routes.draw do
     post '/sessions' => 'sessions#create'
   end
   
-  resources :events
-  
-  
-  resources :events do
-    resources :signups
+  scope 'events', :as  => :events do
+    get '/new' => 'events#new', :via => [:get,:post]
+    post '/new' => 'events#create'
+    get '/:id/edit' => 'events#edit', :via => [:get,:put,:delete]
+    put '/:id/edit' => 'events#update'
+    delete '/:id/edit' => 'events#destroy'
+    get '/:id/show' => 'events#show', :as => :show
+    
+    scope '/:event_id/signups', :as => :signups do
+      get '/new' => 'signups#new', :via => [:get,:post], :as => :new
+      post '/:id/mark' => 'signups#mark', :as => :mark
+    end
+    
   end
+  
+#  resources :events
+#  
+#  
+#  resources :events do
+#    resources :signups
+#  end
   resources :posts
   resources :photos, :only => [:show, :index]
 end
