@@ -10,6 +10,7 @@ Ieee::Application.routes.draw do
   get "users/edit" => "users#edit"
   get "hope" => "statics#hope", :as => "hope"
   get "indrel" => "statics#indrel", :as => "indrel"
+  get "calendar" => "events#calendar", :as => "calendar"
   
   root :to => "users#home"
   

@@ -11,6 +11,7 @@ class EventsController < ApplicationController
       if @e.save
         format.html {redirect_to home_url, :notice => "Event creation successful for" + @e.title}
         format.xml {head :ok}
+          #Event.add_event_to_google_calendar(@e)
       else
         format.html {redirect_to home_url, :notice => @e.errors}
         format.xml {render :sml => @e.errors, :status => :unprocessable_entity}
@@ -96,4 +97,8 @@ class EventsController < ApplicationController
       format.xml {head :ok}
     end
   end
+    
+  def calendar
+  end
+    
 end
