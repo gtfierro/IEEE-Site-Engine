@@ -33,7 +33,8 @@ Ieee::Application.routes.draw do
   scope 'events', :as  => :events do
     get '/new' => 'events#new', :as => :new
     post '/new' => 'events#create', :as => :create
-    match '/:id/edit' => 'events#edit', :via => [:get,:put]
+    get '/:id/edit' => 'events#edit', :as => :edit
+    put '/:id/edit' => 'events#update', :as => :update
     delete '/:id/destroy' => 'events#destroy', :as => :destroy
     get '/:id/show' => 'events#show', :as => :show
     
