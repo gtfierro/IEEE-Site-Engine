@@ -7,7 +7,7 @@
             = message
     - if User.exists? and current_user
       %a.link_logout{:href => "/logout"} LOGOUT
-      %a.link_logout{:href => "/users/edit"} USER SETTINGS
+      %a.link_logout{:href => users_edit_path(current_user)} USER SETTINGS
     - else
       %a.link_login{:href => "/login"} LOGIN
   #header
@@ -18,10 +18,10 @@
         %li
           = link_to "HOME", home_url, :class => "home_link"
         %li
-          = link_to "EVENTS", event_path("all"), :class => "events_link"
+          = link_to "EVENTS", events_show_path("all"), :class => "events_link"
         %li
-          = link_to "INDUSTRIAL RELATIONS", indrel_url, :class => "ir_link"
+          = link_to "INDUSTRIAL RELATIONS", statics_indrel_url, :class => "ir_link"
         %li
-          = link_to "H.O.P.E.", hope_url, :class => "hope_link"
+          = link_to "H.O.P.E.", statics_hope_url, :class => "hope_link"
         %li
-          = link_to "ABOUT IEEE", about_url, :class => "about_link"
+          = link_to "ABOUT IEEE", statics_about_url, :class => "about_link"

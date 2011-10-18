@@ -5,8 +5,6 @@ class ApplicationController < ActionController::Base
   private
   
   def has_permission
-
-
     unless current_user
       redirect_to home_url, :notice => "Permission Denied"
       return false

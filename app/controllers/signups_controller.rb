@@ -32,7 +32,7 @@ class SignupsController < ApplicationController
   
   def mark
     @u = User.find(params[:user_id])
-    @s = Signup.find(params[:signup_id])
+    @s = Signup.find(params[:id])
     if @s.attended == true
       @s.attended = false
     else
@@ -40,10 +40,10 @@ class SignupsController < ApplicationController
     end
     respond_to do |format|
       if @s.save
-        format.html {redirect_to event_path(@s.event), :notice => "Changed attended to "+@s.attended.to_s+" for "+@u.email}
+        format.html {redirect_to events_show_path(@s.event), :notice => "Changed attended to "+@s.attended.to_s+" for "+@u.email}
         format.xml {head :ok}
       else
-        format.html {redirect_to event_path(@s.event), :notice => "Change was unsuccessful"}
+        format.html {redirect_to events_show_path(@s.event), :notice => "Change was unsuccessful"}
         format.xml {render :xml => @s.errors, :status => :unprocessable_entity}
       end
     end

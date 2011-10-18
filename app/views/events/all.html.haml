@@ -1,7 +1,7 @@
 %h1 All Events
 - @e.each do |e|
   .event
-    %h2= link_to e.title, event_path(e)
+    %h2= link_to e.title, events_show_path(e)
     .location
       = e.location
     .time
@@ -10,6 +10,6 @@
     .description
       = e.description
 - if current_user
-  = link_to 'Create New Event', new_event_path
+  = link_to 'Create New Event', events_new_path
 
 = link_to "View Calendar", calendar_path
