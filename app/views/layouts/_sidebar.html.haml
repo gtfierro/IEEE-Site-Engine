@@ -21,7 +21,7 @@
         = e.event_start.strftime("%m/%d, %l:%M %p")
         = e.event_end.strftime("- %l:%M %p")
       .description
-        = e.description
+        = e.description.slice(0..100) + "..."
       - if current_user
         .option
           = link_to "Edit", events_edit_path(e)

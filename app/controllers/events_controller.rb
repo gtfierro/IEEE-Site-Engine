@@ -7,7 +7,6 @@ class EventsController < ApplicationController
   
   def create
     @e = Event.new(params[:event])
-    puts 'HIHIHIHIHI'
     respond_to do |format|
       if @e.save
         format.html {redirect_to home_url, :notice => "Event creation successful for" + @e.title}
