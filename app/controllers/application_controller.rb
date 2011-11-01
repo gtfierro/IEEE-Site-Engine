@@ -28,3 +28,4 @@ class ApplicationController < ActionController::Base
     Picasa.albums.first(ApplicationHelper::THUMBNAILS_LIMIT)
   end
 end
+#test comment
