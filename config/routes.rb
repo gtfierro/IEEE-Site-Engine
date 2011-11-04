@@ -10,6 +10,7 @@ Ieee::Application.routes.draw do
   scope :as => :statics do
     get 'about' => 'statics#about', :as => 'about'
     get 'hope' => 'statics#hope', :as => 'hope'
+    get 'scope' => 'statics#scope', :as => 'scope'
     get 'indrel' => 'statics#indrel', :as => 'indrel'
   end
   
