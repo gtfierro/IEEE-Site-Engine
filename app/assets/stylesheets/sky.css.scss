@@ -25,10 +25,7 @@ h1 {
 
 h2 {
   font-size: 1.5em;
-}
-
-h4 {
-  font-style: italic;
+  margin-top: 35px;
 }
 
 a {
@@ -208,7 +205,8 @@ p {
 
 blockquote, address {
   color: #616161;
-  padding: 0 30px;
+  padding: 0 15px;
+  margin-left: 15px;
   border-left: 2px solid #225897;
 }
 
@@ -225,5 +223,15 @@ blockquote, address {
 #club_picture {
   width: 500px;
   @include centered();
-  margin-bottom: 10px;
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+
+.qa_pair {
+  margin-bottom: 1.5em;
+}
+
+.question {
+  font-weight: bold;
+  margin-bottom: -10px;
 }
