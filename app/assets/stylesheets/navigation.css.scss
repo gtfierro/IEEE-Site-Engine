@@ -3,7 +3,8 @@
 #user_nav {
   background: url("../images/sky/usernav_bg.png");
   height: $usernav_height;
-
+  line-height: $usernav_height;
+  
   #flash {
     float: left;
     color: #616161;
@@ -23,7 +24,6 @@
   a {
     float: right;
     margin-right: 10px;
-    padding-top: 5px;
 
     &.link_login {
         @include set_navigation(499px, -1px, 20px);

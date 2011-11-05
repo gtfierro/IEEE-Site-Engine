@@ -109,7 +109,16 @@ p {
 }
 
 #photo_wrapper {
-  margin: 10px 0px 5px;
+  margin: 10px 0px 35px 0px;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
 }
 
 #footer {
@@ -123,6 +132,7 @@ p {
     width: $content_width;
     min-width: $content_width;
     color: #616161;
+    text-align: center;
     @include centered();
   }
 }
@@ -169,18 +179,6 @@ p {
     padding: 1em 0;
     font-size: 13px;
   }
-}
-
-
-.clearfix:after {
-  clear: both;
-}
-
-.clearfix:before, clearfix:after {
-  content: " ";
-  display: block;
-  height: 0;
-  visibility: hidden;
 }
 
 .post {
