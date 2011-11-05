@@ -61,23 +61,27 @@
         @include floater(block, left);
 
          &.home_link {
-            @include set_navigation(0px, 42px, 21px);
+            @include set_navigation(-1px, 42px, 21px);
          }
 
          &.events_link {
-            @include set_navigation(63px, 54px, 21px)
+            @include set_navigation(51px, 54px, 21px)
          }
 
          &.ir_link {
-             @include set_navigation(138px, 168px, 18px);
+             @include set_navigation(120px, 168px, 18px);
          }
 
          &.hope_link {
-             @include set_navigation(324px, 46px, 21px);
+             @include set_navigation(305px, 46px, 21px);
+         }
+
+         &.scope_link {
+             @include set_navigation(371px, 46px, 21px);
          }
 
          &.about_link {
-             @include set_navigation(391px, 70px, 24px);
+             @include set_navigation(440px, 70px, 24px);
          }
       }
     }
