@@ -201,6 +201,7 @@ p {
 .option, {
   color: #616161;
   display: inline;
+  margin-right: 10px;
 }
 
 blockquote, address {
@@ -234,4 +235,32 @@ blockquote, address {
 .question {
   font-weight: bold;
   margin-bottom: -10px;
+}
+
+input#email, input#password {
+  color: #888;
+  border: 1px solid #C0C0C0;
+  font-size: 20px;
+  padding: 10px;
+}
+
+button.login {
+  font-size: 15px;
+  line-height: 20px;
+  border: 1px solid #C0C0C0;
+  padding: 7px;
+  margin-left: 0px;
+  margin-top: 5px;
+  background-color: #E8E8E8;
+}
+
+button:hover {
+  background-color: #DFF4FF;
+  border: 1px solid #C2E1EF;
+  color: #336699;
+}
+
+img.login {
+  padding-right: 5px;
+  float: left;
 }

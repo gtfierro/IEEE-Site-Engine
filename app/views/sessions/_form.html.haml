@@ -1,11 +1,10 @@
 = form_tag 'sessions' do
   %div
     %p
-      = label_tag :email
-      %br/
-      = text_field_tag :email, params[:email]
+      = text_field_tag :email, params[:email], :value => "email", :onfocus => "if (this.value == this.defaultValue) {this.value = '';}", :onblur => "if (this.value == '') {this.value = this.defaultValue;}"
     %p
-      = label_tag :password
-      %br/
-      = password_field_tag :password
-    %p.button= submit_tag "Log in"
+      = text_field_tag :password, params[:password], :value => "password", :onfocus => "if (this.value == this.defaultValue) {this.value = ''; this.type = 'password';}", :onblur => "if (this.value == '') {this.value = this.defaultValue; this.type = 'text';}"
+    %p
+      %button.login{:type => "submit"}
+        %img.login{:src => "assets/sky/key.png"}/
+        Log in
