@@ -9,11 +9,17 @@ class EventsController < ApplicationController
     @e = Event.new(params[:event])
     respond_to do |format|
       if @e.save
-        format.html {redirect_to home_url, :notice => "Event creation successful for" + @e.title}
+        msg = "Event creation successful for #{@e.title}"
+        unless @e.add_to_google_calendar
+          msg = "Warning: #{@e.title} may not have been added to Google Calendar" 
+        end
+        format.html {redirect_to home_url, :notice => msg}
         format.xml {head :ok}
-          #Event.add_event_to_google_calendar(@e)
       else
-        format.html {redirect_to home_url, :notice => @e.errors}
+        error_message = "Errors with Event Creation: "
+        @e.errors.values.each {|value| value.each {|msg| error_message << "#{msg}, "} }
+        error_message.chop!.chop!
+        format.html {redirect_to home_url, :notice => error_message}
         format.xml {render :sml => @e.errors, :status => :unprocessable_entity}
       end
     end

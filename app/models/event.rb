@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
   validates_presence_of :description
   
   validate :event_start_must_be_in_future,
-            :event_end_must_be_after_event_start
+           :event_end_must_be_after_event_start
             
   has_many  :users, :through => :signups
   has_many  :signups          
@@ -22,18 +22,27 @@ class Event < ActiveRecord::Base
     end
   end
     
-  def add_event_to_google_calendar event
-    g = GData.new
+  def add_to_google_calendar
+    g = Googlecalendar::GData.new
     g.login('email', 'password')
-    e = { :title     => event.title,
-          :content   => event.description,
-          :author    => current_user.name,
-          :email     => current_user.email,
-          :where     => event.location,
-          :startTime => event.event_start,
-          :endTime   => event.event_end
-        }
-    g.new_event(e, 'ieee-website-test')
+    event = { :title     => self.title,
+              :content   => self.description,
+              :author    => "IEEE Officer", #current_user.name,
+              :email     => "ieee@berkeley.edu", #current_user.email,
+              :where     => self.location,
+              :startTime => self.event_start.to_datetime,
+              :endTime   => self.event_end.to_datetime
+            }
+    response = g.new_event(event, 'calendar-name')    
+    url = response.body[/<id>.*<\/id>/].sub('<id>', '').sub('</id>', '')
+      #save this url for later, need it for editing / deleting
+      
+    if response.message == "Created"
+      return true
+    else
+      warn "ERROR ADDING EVENT TO GOOGLE CALENDAR:\n MESSAGE: #{request.message}\n BODY: #{request.body}\n"
+      return false
+    end
   end
 
 end
