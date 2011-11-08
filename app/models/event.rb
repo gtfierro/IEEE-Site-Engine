@@ -24,16 +24,16 @@ class Event < ActiveRecord::Base
     
   def add_to_google_calendar
     g = Googlecalendar::GData.new
-    g.login('email', 'password')
+    g.login('ieeeucb@gmail.com', 'inputoutput')
     event = { :title     => self.title,
               :content   => self.description,
               :author    => "IEEE Officer", #current_user.name,
-              :email     => "ieee@berkeley.edu", #current_user.email,
+              :email     => "ieeeucb@gmail.com", #current_user.email,
               :where     => self.location,
               :startTime => self.event_start.to_datetime,
               :endTime   => self.event_end.to_datetime
             }
-    response = g.new_event(event, 'calendar-name')    
+    response = g.new_event(event, 'IEEE Berkeley')    
     url = response.body[/<id>.*<\/id>/].sub('<id>', '').sub('</id>', '')
       #save this url for later, need it for editing / deleting
       
