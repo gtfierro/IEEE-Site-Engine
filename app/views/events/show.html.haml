@@ -1,4 +1,5 @@
 %h1= @e.title
+%h4= User.find(@e.author_id).name if @e.author_id.exists?
 .event
   .location
     = @e.location

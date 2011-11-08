@@ -7,6 +7,7 @@ class EventsController < ApplicationController
   
   def create
     @e = Event.new(params[:event])
+    @e.author_id = current_user.id
     respond_to do |format|
       if @e.save
         msg = "Event creation successful for #{@e.title}"

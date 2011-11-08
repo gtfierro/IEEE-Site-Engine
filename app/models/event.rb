@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
            :event_end_must_be_after_event_start
             
   has_many  :users, :through => :signups
-  has_many  :signups          
+  has_many  :signups    
     
   def event_start_must_be_in_future
     if !event_start.future?
