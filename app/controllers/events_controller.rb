@@ -12,7 +12,7 @@ class EventsController < ApplicationController
       if @e.save
         msg = "Event creation successful for #{@e.title}"
         unless @e.add_to_google_calendar
-          msg = "Warning: #{@e.title} may not have been added to Google Calendar" 
+          msg = "Warning: #{@e.title} may not have been added correctly to Google Calendar" 
         end
         format.html {redirect_to home_url, :notice => msg}
         format.xml {head :ok}

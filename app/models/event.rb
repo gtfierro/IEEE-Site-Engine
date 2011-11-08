@@ -27,20 +27,20 @@ class Event < ActiveRecord::Base
     g.login('ieeeucb@gmail.com', 'inputoutput')
     event = { :title     => self.title,
               :content   => self.description,
-              :author    => "IEEE Officer", #current_user.name,
-              :email     => "ieeeucb@gmail.com", #current_user.email,
+              :author    => User.find(self.author_id).name,
+              :email     => User.find(self.author_id).email,
               :where     => self.location,
               :startTime => self.event_start.to_datetime,
               :endTime   => self.event_end.to_datetime
             }
-    response = g.new_event(event, 'IEEE Berkeley')    
-    url = response.body[/<id>.*<\/id>/].sub('<id>', '').sub('</id>', '')
-      #save this url for later, need it for editing / deleting
+    response = g.new_event(event, 'IEEE-Berkeley-Public')    
       
     if response.message == "Created"
+      url = response.body[/<id>.*<\/id>/].sub('<id>', '').sub('</id>', '')
+        #save this url for later, need it for editing / deleting
       return true
     else
-      warn "ERROR ADDING EVENT TO GOOGLE CALENDAR:\n MESSAGE: #{request.message}\n BODY: #{request.body}\n"
+      warn "ERROR ADDING EVENT TO GOOGLE CALENDAR:\n MESSAGE: #{response.message}\n BODY: #{response.body}\n"
       return false
     end
   end
