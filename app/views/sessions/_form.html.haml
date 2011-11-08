@@ -5,6 +5,6 @@
     %p
       = text_field_tag :password, params[:password], :value => "password", :onfocus => "if (this.value == this.defaultValue) {this.value = ''; this.type = 'password';}", :onblur => "if (this.value == '') {this.value = this.defaultValue; this.type = 'text';}"
     %p
-      %button.login{:type => "submit"}
-        %img.login{:src => "assets/sky/key.png"}/
+      %button{:type => "submit"}
+        %img.button{:src => "assets/sky/key.png"}/
         Log in

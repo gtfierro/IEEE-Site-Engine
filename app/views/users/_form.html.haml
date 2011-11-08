@@ -29,4 +29,7 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation
-  %p.button= f.submit
+  %p
+    %button{:type => "submit"}
+      %img.button{:src => "/assets/sky/check.png"}/
+      Update User
