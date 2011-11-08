@@ -3,7 +3,7 @@
     .post
       .time= p.created_at.strftime("%B %e")
       %h1= p.title
-      %h3= User.find(p.author_id).name if p.author_id.exists?
+      %h3= User.find(p.author_id).name
       .content
         = h(p.content.html_safe)
       - if current_user
