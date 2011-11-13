@@ -6,30 +6,18 @@
         - for message in @user.errors.full_messages
           %li= message
   %p
-    = f.label :email
-    %br/
-    = f.text_field :email
+    = f.text_field :email, :onfocus => "clearfield(this)", :onblur => "resetfield(this)"
   %p
-    = f.label :name
-    %br/
-    = f.text_field :name
+    = f.text_field :name, :onfocus => "clearfield(this)", :onblur => "resetfield(this)"
   %p
-    = f.label :year_in_school
-    %br/
-    = f.text_field :year
+    = f.text_field :year, :onfocus => "clearfield(this)", :onblur => "resetfield(this)"
   %p
-    = f.label :position
-    %br/
-    = f.text_field :position
+    = f.text_field :position, :onfocus => "clearfield(this)", :onblur => "resetfield(this)"
   %p
-    = f.label :password
-    %br/
-    = f.password_field :password
+    = f.text_field :password, :value => "password", :onfocus => "pwclearfield(this)", :onblur => "pwresetfield(this)"
   %p
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
+    = f.text_field :password_confirmation, :value => "confirm password", :onfocus => "pwclearfield(this)", :onblur => "pwresetfield(this)"
   %p
-    %button{:type => "submit"}
-      %img.button{:src => "/assets/sky/check.png"}/
+    %button{:type => "submit", :class => "positive"}
+      = image_tag("sky/check.png", :class => "button")
       Update User
