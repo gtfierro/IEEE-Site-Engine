@@ -11,9 +11,7 @@ gem 'tilt', "~> 1.3.3"
 gem 'rake', "~> 0.9.2"
 gem 'therubyracer'
 gem 'googlecalendar'
-
-# For some reason, there are some dependencies on the less gem
-# So we are going to put it in here for now; remove it in the future
+gem 'will_paginate'
 
 # Gems used only for assets and not required
 # in production environments by default
