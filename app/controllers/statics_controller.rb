@@ -17,6 +17,9 @@ class StaticsController < ApplicationController
   def hope
   end
 
+  def scope
+  end
+
   def indrel
   end
 

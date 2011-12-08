@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def create
    params[:post][:content] = Sanitize.clean(params[:post][:content], Sanitize::Config::RELAXED)
     @p = Post.new(params[:post])
+    @p.author_id = current_user.id
     respond_to do |format|
       if @p.save
         format.html {redirect_to home_url, :notice => "Post creation successful for " + @p.title }

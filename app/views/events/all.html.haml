@@ -9,7 +9,9 @@
       = e.event_end.strftime("- %l:%M %p")
     .description
       = e.description
-- if current_user
-  = link_to 'Create New Event', events_new_path
+%div.option
+  - if current_user
+    = link_to 'Create New Event', events_new_path
 
-= link_to "View Calendar", calendar_path
+%div.option
+  = link_to "View Calendar", calendar_path

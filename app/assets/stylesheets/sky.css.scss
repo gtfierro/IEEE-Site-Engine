@@ -25,10 +25,7 @@ h1 {
 
 h2 {
   font-size: 1.5em;
-}
-
-h4 {
-  font-style: italic;
+  margin-top: 35px;
 }
 
 a {
@@ -105,11 +102,22 @@ p {
     width: $main_content_width;
     margin: 0 10px;
     min-height: 100%;
+
+
   }
 }
 
 #photo_wrapper {
-  margin: 10px 0px 5px;
+  margin: 10px 0px 35px 0px;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
 }
 
 #footer {
@@ -123,6 +131,7 @@ p {
     width: $content_width;
     min-width: $content_width;
     color: #616161;
+    text-align: center;
     @include centered();
   }
 }
@@ -143,7 +152,7 @@ p {
 }
 
 .event {
-  margin: 10px 0px;
+  margin: 10px 0px 25px 0px;
 
   .title_wrapper {
     font-size: 17px;
@@ -152,6 +161,7 @@ p {
     .title {
       display: inline-block;
       width: 200px;
+      vertical-align: top;
     }
 
     .calendar {
@@ -163,24 +173,13 @@ p {
 
   .location, .time {
     color: #616161;
+    margin-bottom: 5px;
   }
 
  .description {
     padding: 1em 0;
     font-size: 13px;
   }
-}
-
-
-.clearfix:after {
-  clear: both;
-}
-
-.clearfix:before, clearfix:after {
-  content: " ";
-  display: block;
-  height: 0;
-  visibility: hidden;
 }
 
 .post {
@@ -206,17 +205,21 @@ p {
 .option, {
   color: #616161;
   display: inline;
+  margin-right: 10px;
+  margin-left: 0px;
 }
 
 blockquote, address {
   color: #616161;
-  padding: 0 30px;
+  padding: 0 15px;
+  margin-left: 15px;
   border-left: 2px solid #225897;
 }
 
 .album {
   display: inline-block;
   width: 310px;
+  margin-bottom: 4em;
   text-align: center;
 }
 
@@ -227,5 +230,58 @@ blockquote, address {
 #club_picture {
   width: 500px;
   @include centered();
-  margin-bottom: 10px;
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+
+.qa_pair {
+  margin-bottom: 1.5em;
+}
+
+.question {
+  font-weight: bold;
+  margin-bottom: -10px;
+}
+
+input#email, input#password, input#user_email,
+input#user_name, input#user_year, input#user_position,
+input#user_password, input#user_password_confirmation
+{
+  color: #888;
+  border: 1px solid #C0C0C0;
+  font-size: 20px;
+  padding: 10px;
+}
+
+button {
+  font-size: 15px;
+  line-height: 20px;
+  border: 1px solid #C0C0C0;
+  padding: 7px;
+  margin-left: 0px;
+  margin-top: 5px;
+  background-color: #E8E8E8;
+}
+
+button:hover {
+  background-color: #DFF4FF;
+  border: 1px solid #C2E1EF;
+  color: #336699;
+}
+
+button.positive:hover {
+  background-color: #E6EFC2;
+  border: 1px solid #C6D880;
+  color:#529214;
+}
+
+button.negative:hover {
+  background:#fbe3e4;
+  border:1px solid #fbc2c4;
+  color:#d12f19;
+}
+
+img.button {
+  padding-right: 5px;
+  float: left;
 }
