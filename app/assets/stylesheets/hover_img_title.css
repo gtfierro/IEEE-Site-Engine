@@ -1,0 +1,29 @@
+.officer img {
+	border: none;
+}
+.officer .title {
+	background-color: rgba(0, 0, 0, 0.5);
+	bottom: 40px;
+	color: #FFFFFF;
+	font-size: 11px;
+	padding: 3px;
+	padding-left: 7px;
+	position: relative;
+	width: 90px;
+	height: 30px;
+}
+.officer {
+	width: 100px;
+	padding-right: 32px;
+	margin: 0;
+	float: left;
+}
+.officer_six {
+	padding-right: 5.6px;
+}
+.officer_three {
+	padding-right: 164px;
+}
+.officer_four {
+	padding-right: 76px;
+}

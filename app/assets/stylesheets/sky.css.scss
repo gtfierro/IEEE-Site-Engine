@@ -102,6 +102,8 @@ p {
     width: $main_content_width;
     margin: 0 10px;
     min-height: 100%;
+
+
   }
 }
 
@@ -217,6 +219,7 @@ blockquote, address {
 .album {
   display: inline-block;
   width: 310px;
+  margin-bottom: 4em;
   text-align: center;
 }
 

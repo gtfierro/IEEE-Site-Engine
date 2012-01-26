@@ -1,6 +1,10 @@
 %h1 About Us
 = link_to image_tag("sky/club_picture.jpg", :title => "IEEE Officer Corps 2010", :alt => "IEEE Officer Corps 2010", :id => "club_picture"), image_path("sky/club_picture.jpg")
+
+= link_to "Current Officers", statics_officers_path
+
 %p This is the U.C. Berkeley IEEE Student Branch, part of Region 6 (US - West). As an active organization on campus, we provide lab services, promote student professional awareness, participate in high school outreach programs, play a role as a backbone for student-industry networking, and plan student social activities to maintain balance with the technical atmosphere.
+
 
 %p IEEE is an acronym standing for Institute of Electrical and Electronics Engineers.
 
@@ -20,3 +24,4 @@
   Email address:
   %blockquote
     = mail_to "ieee@berkeley.edu"
+
