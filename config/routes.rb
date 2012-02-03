@@ -10,9 +10,15 @@ Ieee::Application.routes.draw do
   scope :as => :statics do
     get 'about' => 'statics#about', :as => 'about'
     get 'officers' => 'statics#officers', :as => 'officers'
-    get 'hope' => 'statics#hope', :as => 'hope'
     get 'scope' => 'statics#scope', :as => 'scope'
     get 'indrel' => 'statics#indrel', :as => 'indrel'
+  end
+ 
+  scope "hope", :as => :hope do
+    get 'about' => 'hope#about', :as => 'about' 
+    get 'programs' => 'hope#programs', :as => 'programs' 
+    get 'resources' => 'hope#resources', :as => 'resources' 
+    get 'faq' => 'hope#faq', :as => 'faq' 
   end
   
   root :to => "users#home"

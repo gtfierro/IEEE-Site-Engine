@@ -1,0 +1,7 @@
+%h1#hope_title Hands On Practical Electronics
+%div#hope_nav
+  - %w(about programs resources faq).each do |name|
+    = link_to name.upcase, name, :id => "hope_#{name}", :class => "hope_nav_link" 
+
+%div#hope_content
+  %p There doesn't seem to be anything here.

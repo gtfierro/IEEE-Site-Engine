@@ -4,7 +4,7 @@ html,body {
     padding: 0px;
     margin: 0px;
     background: url("../images/sky/body_bg.png");
-    font-family: 'Droid Sans', Arial;
+    font-family: 'Droid Sans', Arial, 'Letter Gothic Std';
     font-size: 13px;
     color: #343434;
     height: 100%;
@@ -263,6 +263,21 @@ button {
   background-color: #E8E8E8;
 }
 
+//button.hope_nav_button {
+//  width: 118px;	
+//  margin-left: 3px;
+//  margin-right: 3px;
+//  margin-top: 0px;
+//}
+
+//button#hope_contact {
+//  margin-right: 0px;
+//}
+
+//button#hope_about {
+//  margin-left: 2px;
+//}
+
 button:hover {
   background-color: #DFF4FF;
   border: 1px solid #C2E1EF;
@@ -284,4 +299,9 @@ button.negative:hover {
 img.button {
   padding-right: 5px;
   float: left;
+}
+
+a.hope_nav_link {
+  margin-right: 34px;
+  font-size: 12pt;
 }

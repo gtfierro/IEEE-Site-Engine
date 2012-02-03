@@ -14,8 +14,8 @@ class StaticsController < ApplicationController
     @website = ['Kristine Chen', 'Jian P. Chen', 'Stephanie Chou', 'Yuval Gnessin', 'Kevin Sheng', 'David Su']
   end
 
-  def hope
-  end
+#  def hope
+#  end
 
   def scope
   end
