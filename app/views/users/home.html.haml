@@ -1,9 +1,10 @@
-- if Post.exists?
-  - recent_posts.each do |p|
+- posts = recent_posts
+- if posts
+  - posts.each do |p|
     .post
       .time= p.created_at.strftime("%B %e")
       %h1= p.title
-      %h3= User.find(p.author_id).name
+      %h3= p.author.name
       .content
         = h(p.content.html_safe)
       - if current_user
@@ -11,5 +12,7 @@
           = link_to "Edit", edit_post_path(p)
         .option
           = link_to "Delete", post_path(p), :method => "delete"
+  = will_paginate posts, :class => "post_pagination"
+
 - if current_user
   = link_to 'Create New Post', new_post_path

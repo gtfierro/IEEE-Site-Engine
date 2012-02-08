@@ -9,5 +9,7 @@ ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
   end
 end
 
+Haml::Template.options[:ugly] = true
+
 # Initialize the rails application
 Ieee::Application.initialize!

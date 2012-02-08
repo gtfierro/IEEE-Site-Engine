@@ -1,10 +1,10 @@
 = form_tag 'sessions' do
   %div
     %p
-      = text_field_tag :email, params[:email], :value => "email", :onfocus => "if (this.value == this.defaultValue) {this.value = '';}", :onblur => "if (this.value == '') {this.value = this.defaultValue;}"
+      = text_field_tag :email, params[:email], :value => "email", :onfocus => "clearfield(this)", :onblur => "resetfield(this)"
     %p
-      = text_field_tag :password, params[:password], :value => "password", :onfocus => "if (this.value == this.defaultValue) {this.value = ''; this.type = 'password';}", :onblur => "if (this.value == '') {this.value = this.defaultValue; this.type = 'text';}"
+      = text_field_tag :password, params[:password], :value => "password", :onfocus => "pwclearfield(this)", :onblur => "pwresetfield(this)"
     %p
-      %button.login{:type => "submit"}
-        = image_tag("sky/key.png", :class => "login")
+      %button{:type => "submit"}
+        = image_tag("sky/key.png", :class => "button")
         Log in

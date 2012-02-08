@@ -4,7 +4,7 @@ html,body {
     padding: 0px;
     margin: 0px;
     background: url("../images/sky/body_bg.png");
-    font-family: 'Droid Sans', Arial;
+    font-family: 'Droid Sans', Arial, 'Letter Gothic Std';
     font-size: 13px;
     color: #343434;
     height: 100%;
@@ -102,6 +102,8 @@ p {
     width: $main_content_width;
     margin: 0 10px;
     min-height: 100%;
+
+
   }
 }
 
@@ -150,7 +152,7 @@ p {
 }
 
 .event {
-  margin: 10px 0px;
+  margin: 10px 0px 25px 0px;
 
   .title_wrapper {
     font-size: 17px;
@@ -159,6 +161,7 @@ p {
     .title {
       display: inline-block;
       width: 200px;
+      vertical-align: top;
     }
 
     .calendar {
@@ -170,6 +173,7 @@ p {
 
   .location, .time {
     color: #616161;
+    margin-bottom: 5px;
   }
 
  .description {
@@ -202,6 +206,7 @@ p {
   color: #616161;
   display: inline;
   margin-right: 10px;
+  margin-left: 0px;
 }
 
 blockquote, address {
@@ -214,6 +219,7 @@ blockquote, address {
 .album {
   display: inline-block;
   width: 310px;
+  margin-bottom: 4em;
   text-align: center;
 }
 
@@ -237,14 +243,17 @@ blockquote, address {
   margin-bottom: -10px;
 }
 
-input#email, input#password {
+input#email, input#password, input#user_email,
+input#user_name, input#user_year, input#user_position,
+input#user_password, input#user_password_confirmation
+{
   color: #888;
   border: 1px solid #C0C0C0;
   font-size: 20px;
   padding: 10px;
 }
 
-button.login {
+button {
   font-size: 15px;
   line-height: 20px;
   border: 1px solid #C0C0C0;
@@ -254,13 +263,45 @@ button.login {
   background-color: #E8E8E8;
 }
 
+//button.hope_nav_button {
+//  width: 118px;	
+//  margin-left: 3px;
+//  margin-right: 3px;
+//  margin-top: 0px;
+//}
+
+//button#hope_contact {
+//  margin-right: 0px;
+//}
+
+//button#hope_about {
+//  margin-left: 2px;
+//}
+
 button:hover {
   background-color: #DFF4FF;
   border: 1px solid #C2E1EF;
   color: #336699;
 }
 
-img.login {
+button.positive:hover {
+  background-color: #E6EFC2;
+  border: 1px solid #C6D880;
+  color:#529214;
+}
+
+button.negative:hover {
+  background:#fbe3e4;
+  border:1px solid #fbc2c4;
+  color:#d12f19;
+}
+
+img.button {
   padding-right: 5px;
   float: left;
+}
+
+a.hope_nav_link {
+  margin-right: 34px;
+  font-size: 12pt;
 }
