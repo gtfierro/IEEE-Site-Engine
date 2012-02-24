@@ -4,6 +4,9 @@
   %div{:id => "photo_wrapper", :class => "clearfix"}
     - featured_albums.each do |a|
       = link_to image_tag(a[:thumbnail], :size => "70x70"), a[:slideshow], :class => "sidebar_thumb", :title => a[:title]
+  %h1#subscribe_form
+    = link_to "Subscribe Now!", statics_subscribe_path
+  %span#test
   %h1 Upcoming Events
   = link_to "View Calendar", calendar_path
   %br/
