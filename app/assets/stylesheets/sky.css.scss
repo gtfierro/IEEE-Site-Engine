@@ -127,7 +127,7 @@ p {
   clear:both;
 
   #copyright {
-    padding-top: 10px;
+    line-height: $footer_height;
     width: $content_width;
     min-width: $content_width;
     color: #616161;
