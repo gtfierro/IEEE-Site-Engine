@@ -103,7 +103,11 @@ p {
     margin: 0 10px;
     min-height: 100%;
 
-
+    .success_flash {
+      font-size:1.2em;
+      color:green;
+      margin-bottom: 10px;
+    }
   }
 }
 

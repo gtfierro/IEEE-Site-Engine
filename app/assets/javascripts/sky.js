@@ -1,7 +1,8 @@
 $(document).ready(function() {
-  var slideForm = function(context, duration) {
-    context.slideDown(duration);
-  };
+  var $content = $("#content"),
+      slideForm = function(context, duration) {
+        context.slideDown(duration);
+      };
   $("#subscribe_form")
       .on("click", 'a', function(e) {
         var $subscribeForm = $('#mc_embed_signup');
@@ -16,7 +17,7 @@ $(document).ready(function() {
         e.preventDefault();
         e.stopPropagation();
       });
-  $("#content")
+  $content
       .on("submit", '#mc_embed_signup form', function(e) {
         var $this = $(this);
         $.post("https://calmail.berkeley.edu//manage/list/listinfo_subscribe/ieee-members@lists.berkeley.edu", $this.serialize())
@@ -25,10 +26,11 @@ $(document).ready(function() {
             if (successFlash.length) {
               successFlash.remove();
             }
+            $('#mc_embed_signup').slideUp();
             $('<div></div>', {
               text: "Thank you! A confirmation email will be sent to " + $this.find("#subscribe_form_address").val() + " shortly.",
               class: "success_flash"
-            }).prependTo($this);
+            }).prependTo($content);
           });
         e.preventDefault();
         e.stopPropagation();
