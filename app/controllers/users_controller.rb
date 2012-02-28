@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   before_filter :has_permission, :except => [:home]
-  
+
   def new
     @user = User.new
   end
-  
+
   def create
     @user = User.new(params[:user])
     respond_to do |format|
@@ -17,11 +17,11 @@ class UsersController < ApplicationController
       end
     end
   end
-  
+
   def edit
     @user = current_user
   end
-  
+
   def update
     @user = User.find(params[:id])
     respond_to do |format|
@@ -34,13 +34,12 @@ class UsersController < ApplicationController
       end
     end
   end
-  
+
   def show
   end
-  
+
   def home
     @user = current_user
-    render "home"
   end
-  
+
 end
