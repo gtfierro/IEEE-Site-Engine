@@ -6,12 +6,14 @@
 %div#hope_content
   %h2 Resources
   = link_to "Syllabus", "../../assets/hope_materials/Syllabus.pdf"
-  - 3.times {%br}
+  - 3.times do
+    %br
   %div.hope_downloads#lessons
     - (1..10).each do |i|
       = link_to "Lesson#{'%02d'%i}", "../../assets/hope_materials/Lesson#{'%02d'%i}.ppt" 
       %br
       %br
+    = link_to "Inductor Lesson", "../../assets/hope_materials/Lesson_inductor.ppt"
   %div.hope_downloads#handouts
     - (1..10).each do |i|
       = link_to "Handout#{'%02d'%i}", "../../assets/hope_materials/Handout#{'%02d'%i}.pdf"
