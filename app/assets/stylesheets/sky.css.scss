@@ -267,21 +267,6 @@ button {
   background-color: #E8E8E8;
 }
 
-//button.hope_nav_button {
-//  width: 118px;
-//  margin-left: 3px;
-//  margin-right: 3px;
-//  margin-top: 0px;
-//}
-
-//button#hope_contact {
-//  margin-right: 0px;
-//}
-
-//button#hope_about {
-//  margin-left: 2px;
-//}
-
 button:hover {
   background-color: #DFF4FF;
   border: 1px solid #C2E1EF;
@@ -308,4 +293,18 @@ img.button {
 a.hope_nav_link {
   margin-right: 34px;
   font-size: 12pt;
+}
+
+#hope_programs2 {
+	float: right;
+}
+
+#hope_about1, #hope_about3 {
+	float: right;
+	padding: 4px 0px 0px 15px;
+}
+
+#hope_about2 {
+	float: left;
+	padding: 4px 15px 0px 0px;
 }
