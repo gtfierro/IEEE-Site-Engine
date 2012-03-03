@@ -103,7 +103,11 @@ p {
     margin: 0 10px;
     min-height: 100%;
 
-
+    .success_flash {
+      font-size:1.2em;
+      color:green;
+      margin-bottom: 10px;
+    }
   }
 }
 
@@ -127,7 +131,7 @@ p {
   clear:both;
 
   #copyright {
-    padding-top: 10px;
+    line-height: $footer_height;
     width: $content_width;
     min-width: $content_width;
     color: #616161;
@@ -264,7 +268,7 @@ button {
 }
 
 //button.hope_nav_button {
-//  width: 118px;	
+//  width: 118px;
 //  margin-left: 3px;
 //  margin-right: 3px;
 //  margin-top: 0px;

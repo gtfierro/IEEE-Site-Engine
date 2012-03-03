@@ -1,0 +1,5 @@
+#mc_embed_signup
+  = form_tag("https://calmail.berkeley.edu//manage/list/listinfo_subscribe/ieee-members@lists.berkeley.edu", :name => "subscribe-form", :target => "_blank") do
+    = label_tag(:subscribe_form_address, "Subscribe to our mailing list")
+    = text_field_tag(:subscribe_form_address, "", :placeholder => "email address", :class => "email", :id => "subscribe_form_address", :name => "address", :required => "", :type => "email")
+    = submit_tag("Subscribe", :class => "button", :id => "mc_embedded-subscribe")

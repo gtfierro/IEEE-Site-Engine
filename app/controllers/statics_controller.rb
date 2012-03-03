@@ -1,5 +1,5 @@
 class StaticsController < ApplicationController
-  
+
   def about
   end
 
@@ -23,4 +23,6 @@ class StaticsController < ApplicationController
   def indrel
   end
 
+  def subscribe
+  end
 end
