@@ -32,6 +32,7 @@ GEM
       multi_json (~> 1.0)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
+    bcrypt-ruby (3.0.1-x86-mingw32)
     builder (3.0.0)
     cocaine (0.2.0)
     coffee-rails (3.1.1)
@@ -57,7 +58,6 @@ GEM
       railties (~> 3.0)
       thor (~> 0.14)
     json (1.6.5)
-    libv8 (3.3.10.2)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -65,12 +65,14 @@ GEM
     mime-types (1.16)
     multi_json (1.1.0)
     nokogiri (1.5.0)
+    nokogiri (1.5.0-x86-mingw32)
     paperclip (2.4.2)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
     pg (0.11.0)
+    pg (0.11.0-x86-mingw32)
     picasa (0.2.2)
       xml-simple
     polyglot (0.3.2)
@@ -118,8 +120,7 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.4)
-    therubyracer (0.9.4)
-      libv8 (~> 3.3.10)
+    sqlite3 (1.3.4-x86-mingw32)
     thor (0.14.6)
     tilt (1.3.3)
     treetop (1.4.10)
@@ -134,6 +135,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   bcrypt-ruby
@@ -150,7 +152,6 @@ DEPENDENCIES
   sanitize
   sass-rails (~> 3.1.0)
   sqlite3
-  therubyracer
   tilt (~> 1.3.3)
   uglifier
   will_paginate

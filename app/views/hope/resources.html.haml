@@ -5,6 +5,23 @@
 
 %div#hope_content
   %h2 Resources
-  %p There doesn't seem to be anything here.
+  = link_to "Syllabus", "../../assets/hope_materials/Syllabus.pdf"
+  - 3.times {%br}
+  %div.hope_downloads#lessons
+    - (1..10).each do |i|
+      = link_to "Lesson#{'%02d'%i}", "../../assets/hope_materials/Lesson#{'%02d'%i}.ppt" 
+      %br
+      %br
+  %div.hope_downloads#handouts
+    - (1..10).each do |i|
+      = link_to "Handout#{'%02d'%i}", "../../assets/hope_materials/Handout#{'%02d'%i}.pdf"
+      %br
+      %br	  
+  %div.hope_downloads#labs
+    - (1..9).each do |i|
+      = link_to "Lab0#{i}", "../../assets/hope_materials/Lab0#{i}.pdf"
+      %br
+      %br	  
+    = link_to "Lab10", "../../assets/hope_materials/Lab10.ppt"  
   -#=image_tag("hope_pictures/resources_pic1.jpg", {:class => "hope_pic", :id => "hope_resources1"})
   -#=image_tag("hope_pictures/resources_pic2.jpg", {:class => "hope_pic", :id => "hope_resources2"})  

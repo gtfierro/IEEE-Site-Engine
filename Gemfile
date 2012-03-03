@@ -9,7 +9,6 @@ gem 'sanitize'
 gem 'paperclip'
 gem 'tilt', "~> 1.3.3"
 gem 'rake', "~> 0.9.2"
-gem 'therubyracer'
 gem 'googlecalendar'
 gem 'will_paginate'
 
