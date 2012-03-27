@@ -1,4 +1,6 @@
 #main
+  -if controller.action_name=='home'
+    = render :partial => 'layouts/slider'
   = render :partial => 'layouts/sidebar'
   #content
     = yield
