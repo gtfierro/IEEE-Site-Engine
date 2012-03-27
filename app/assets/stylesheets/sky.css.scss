@@ -319,3 +319,11 @@ a.hope_nav_link {
 .hope_downloads#labs {
 	padding-left: 123px;
 }
+
+.album img, .gallery img{
+	border-radius:5px;
+	-moz-box-shadow: 0 0 10px #888;
+	-webkit-box-shadow: 0 0 10px #888;
+	box-shadow:  0 0 10px #888;
+}
+
