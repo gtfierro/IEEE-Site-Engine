@@ -4,9 +4,11 @@
     .post
       .time= p.created_at.strftime("%B %e")
       %h1= p.title
-      %h3= p.author.name
       .content
         = h(p.content.html_safe)
+        %p
+        Posted by
+        = p.author.name
       - if current_user
         .option
           = link_to "Edit", edit_post_path(p)

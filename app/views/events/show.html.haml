@@ -1,5 +1,5 @@
 %h1= @e.title
-%h4= User.find(@e.author_id).name
+%h4= "Event Creator: #{User.find(@e.author_id).name}"
 .event
   .location
     = @e.location
