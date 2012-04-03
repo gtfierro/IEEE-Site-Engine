@@ -17,7 +17,12 @@ class ApplicationController < ActionController::Base
 
   def upcoming_events
     #default to 3 events within 30 days from now
-    Event.where(:event_start => DateTime.now..DateTime.now+30.days).sort_by! {|event| event.event_start.to_i }[0,3]
+    events = Event.where(:event_start => DateTime.now..DateTime.now+30.days)
+    if not events.empty?
+      events.sort_by! {|event| event.event_start.to_i }[0,3]
+    else
+      []
+    end
   end
 
   def recent_posts
