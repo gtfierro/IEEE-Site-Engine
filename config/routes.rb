@@ -6,6 +6,7 @@ Ieee::Application.routes.draw do
   get "photos" => "photos#index", :as => "photos"
   get "users/edit" => "users#edit"
   get "calendar" => "events#calendar", :as => "calendar"
+  get "hope" => "hope#about", :as => "hope"
 
   scope :as => :statics do
     get 'about' => 'statics#about', :as => 'about'
