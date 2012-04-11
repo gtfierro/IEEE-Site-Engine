@@ -9,6 +9,15 @@
     %title Institute of Electrical and Electronics Engineers
 
   %body
+    #fb-root
+    :javascript
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/fb_LT/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
     #container
       = render :partial => 'layouts/navbar'
       = render :partial => 'layouts/twocolumn'
@@ -16,3 +25,5 @@
     #footer
       #copyright
         Copyright &copy; #{Time.now.year} UC Berkeley IEEE
+      #social
+        .fb-like{"data-href" => "http://ieee.berkeley.edu/", "data-layout" => "button_count", "data-send" => "true", "data-show-faces" => "false", "data-width" => "150"}

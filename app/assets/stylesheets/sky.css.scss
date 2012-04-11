@@ -131,12 +131,20 @@ p {
   clear:both;
 
   #copyright {
-    line-height: $footer_height;
+    line-height: 0.5*$footer_height;
     width: $content_width;
     min-width: $content_width;
     color: #616161;
     text-align: center;
     @include centered();
+  }
+  
+  #social {
+    text-align: center;
+  }
+  
+  .fb-like {
+    margin-left: 10px;
   }
 }
 
