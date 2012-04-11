@@ -6,7 +6,7 @@
   = link_to "View All Albums", photos_url, :id => "all_photos"
   %div{:id => "photo_wrapper", :class => "clearfix"}
     - featured_albums.each do |a|
-      = link_to image_tag(a[:thumbnail], :size => "70x70"), a[:slideshow], :class => "sidebar_thumb", :title => a[:title]
+      = link_to image_tag(a[:thumbnail], :size => "70x70"), photo_path(a[:id]), :class => "sidebar_thumb", :title => a[:title]
   %span#test
   %h1 Upcoming Events
   = link_to "View Calendar", calendar_path
