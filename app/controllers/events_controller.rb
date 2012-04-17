@@ -1,6 +1,11 @@
 class EventsController < ApplicationController
   before_filter :has_permission, :except => [:show, :calendar]
     
+  def index
+    @e = Event.order("event_start desc")
+    @user = current_user
+  end
+  
   def new
     @e = Event.new
   end
@@ -14,13 +19,13 @@ class EventsController < ApplicationController
         unless @e.add_to_google_calendar
           msg = "Warning: #{@e.title} may not have been added correctly to Google Calendar" 
         end
-        format.html {redirect_to home_url, :notice => msg}
+        format.html {redirect_to events_path, :notice => msg}
         format.xml {head :ok}
       else
         error_message = "Errors with Event Creation: "
         @e.errors.values.each {|value| value.each {|msg| error_message << "#{msg}, "} }
         error_message.chop!.chop!
-        format.html {redirect_to home_url, :notice => error_message}
+        format.html {redirect_to events_path, :notice => error_message}
         format.xml {render :sml => @e.errors, :status => :unprocessable_entity}
       end
     end
@@ -29,7 +34,7 @@ class EventsController < ApplicationController
   def edit
     if not Event.exists?(params[:id])
       respond_to do |format|
-        format.html {redirect_to home_url, :notice => "Event not found"}
+        format.html {redirect_to events_path, :notice => "Event not found"}
         format.xml {head :ok}      
       end
     else
@@ -38,19 +43,13 @@ class EventsController < ApplicationController
   end
   
   def show
-    if params[:id] == "all"
-      @e = Event.order("event_start desc")
-      @user = current_user
-      render "all"
-    else
-      if not Event.exists?(params[:id])
-        respond_to do |format|
-          format.html {redirect_to home_url, :notice => "Event not found"}
-          format.xml {head :ok}      
-        end
-      else
-        @e = Event.find(params[:id])
+    if not Event.exists?(params[:id])
+      respond_to do |format|
+        format.html {redirect_to events_path, :notice => "Event not found"}
+        format.xml {head :ok}      
       end
+    else
+      @e = Event.find(params[:id])
     end
   end
 
@@ -58,7 +57,7 @@ class EventsController < ApplicationController
   def signup
     if not Event.exists?(params[:id])
       respond_to do |format|
-        format.html {redirect_to home_url, :notice => "Event not found"}
+        format.html {redirect_to events_path, :notice => "Event not found"}
         format.xml {head :ok}      
       end
     else
@@ -67,10 +66,10 @@ class EventsController < ApplicationController
     @e.users << current_user
     respond_to do |format|
       if @e.save
-        format.html {redirect_to home_url, :notice => "Signup for "+ @e.title+ " successful"}
+        format.html {redirect_to event_path(@e), :notice => "Signup for "+ @e.title+ " successful"}
         format.xml {head :ok}
       else
-        format.html {redirect_to home_url, :notice => "Signup was unsuccessful"}
+        format.html {redirect_to events_path, :notice => "Signup was unsuccessful"}
         format.xml {render :xml => @e.errors, :status => :unprocessable_entity}
       end
     end
@@ -79,7 +78,7 @@ class EventsController < ApplicationController
   def update
     if not Event.exists?(params[:id])
       respond_to do |format|
-        format.html {redirect_to home_url, :notice => "Event not found"}
+        format.html {redirect_to events_path, :notice => "Event not found"}
         format.xml {head :ok}      
       end
     else
@@ -87,10 +86,10 @@ class EventsController < ApplicationController
     end
     respond_to do |format|
       if @e.update_attributes(params[:event])
-        format.html {redirect_to home_url, :notice => "Update successful!"}
+        format.html {redirect_to event_path, :notice => "Update successful!"}
         format.xml {head :ok}
       else
-        format.html {redirect_to home_url, :notice => "Update wasn't successful"}
+        format.html {redirect_to event_path, :notice => "Update wasn't successful"}
         format.xml {render :xml => @e.errors, :status => :unprocessable_entity}
       end
     end
@@ -100,7 +99,7 @@ class EventsController < ApplicationController
     @e = Event.find(params[:id])
     @e.destroy
     respond_to do |format|
-      format.html {redirect_to home_url, :notice => "Event destroyed!"}
+      format.html {redirect_to events_path, :notice => "Event destroyed!"}
       format.xml {head :ok}
     end
   end

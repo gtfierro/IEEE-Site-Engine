@@ -44,27 +44,14 @@ Ieee::Application.routes.draw do
   end
 
   scope 'events', :as  => :events do
-    get '/new' => 'events#new', :as => :new
-    post '/new' => 'events#create', :as => :create
-    get '/:id/edit' => 'events#edit', :as => :edit
-    put '/:id/edit' => 'events#update', :as => :update
-    delete '/:id/destroy' => 'events#destroy', :as => :destroy
-    get '/:id/show' => 'events#show', :as => :show
-
     scope '/:event_id/signups', :as => :signups do
       get '/new' => 'signups#new', :as => :new
       post '/new' => 'signups#create', :as => :create
       post '/:id/mark' => 'signups#mark', :as => :mark
     end
-
   end
 
-#  resources :events
-#
-#
-#  resources :events do
-#    resources :signups
-#  end
+  resources :events
   resources :posts
   resources :photos, :only => [:show, :index]
 end

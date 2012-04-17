@@ -25,6 +25,6 @@
         \- Attended: #{s.attended}
       %br/
   .option
-    = link_to "Edit", events_edit_path(@e)
+    = link_to "Edit", edit_event_path(@e)
   .option
-    = link_to "Delete", events_destroy_path(p), :method => "delete"
+    = link_to "Delete", event_path(@e), :method => "delete"
