@@ -17,6 +17,7 @@ h1,h2,h3,h4,h5,h6 {
   margin: 0 0 15px;
   vertical-align: baseline;
   font-weight: normal;
+  text-align: left;
 }
 
 h1 {
@@ -131,12 +132,20 @@ p {
   clear:both;
 
   #copyright {
-    line-height: $footer_height;
+    line-height: 0.5*$footer_height;
     width: $content_width;
     min-width: $content_width;
     color: #616161;
     text-align: center;
     @include centered();
+  }
+  
+  #social {
+    text-align: center;
+  }
+  
+  .fb-like {
+    margin-left: 15px;
   }
 }
 
