@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :has_permission, :except => [:show, :calendar]
+  before_filter :has_permission, :except => [:show, :calendar, :index]
     
   def index
     @e = Event.order("event_start desc")
