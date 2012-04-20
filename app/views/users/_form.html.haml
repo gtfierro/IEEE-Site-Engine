@@ -6,13 +6,13 @@
         - for message in @user.errors.full_messages
           %li= message
   %p
-    = f.text_field :email, :onfocus => "clearfield(this)", :onblur => "resetfield(this)"
+    = f.text_field :email, :value => "email address", :onfocus => "clearfield(this)", :onblur => "resetfield(this)"
   %p
-    = f.text_field :name, :onfocus => "clearfield(this)", :onblur => "resetfield(this)"
+    = f.text_field :name, :value => "name", :onfocus => "clearfield(this)", :onblur => "resetfield(this)"
   %p
-    = f.text_field :year, :onfocus => "clearfield(this)", :onblur => "resetfield(this)"
+    = f.text_field :year, :value => "year", :onfocus => "clearfield(this)", :onblur => "resetfield(this)"
   %p
-    = f.text_field :position, :onfocus => "clearfield(this)", :onblur => "resetfield(this)"
+    = f.text_field :position, :value => "position", :onfocus => "clearfield(this)", :onblur => "resetfield(this)"
   %p
     = f.text_field :password, :value => "password", :onfocus => "pwclearfield(this)", :onblur => "pwresetfield(this)"
   %p
