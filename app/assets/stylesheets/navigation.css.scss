@@ -25,6 +25,14 @@
     float: right;
     margin-right: 10px;
 
+	&.ieee_link {
+		float: left;
+        width: 100px;
+		height: 30px;
+		background:url("../images/sky/ieee_logo.jpg") 0 -40px;
+		background-size: 100px;
+     }
+
     &.link_login {
         @include set_navigation(499px, -1px, 20px);
     }

@@ -1,5 +1,6 @@
 #navbar
   #user_nav
+    = link_to "", "http://www.ieee.org", :class => "ieee_link"
     #flash
       - flash.each do |type, message|
         %div{:class => "message #{type}"}
