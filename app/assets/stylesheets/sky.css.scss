@@ -145,7 +145,7 @@ p {
   }
 
   .fb-like {
-    margin-left: 15px;
+    margin-left: 25px;
   }
 }
 
@@ -299,7 +299,7 @@ img.button {
   float: left;
 }
 
-a.hope_nav_link {
+a.hope_nav_link, a.about_nav_link {
   margin-right: 33px;
   font-size: 12pt;
 }
@@ -327,6 +327,11 @@ a.hope_nav_link {
 }
 .hope_downloads#labs {
 	padding-left: 123px;
+}
+
+#advisor_picture {
+	float: left;
+	padding-right: 15px;
 }
 
 .album img, .gallery img{

@@ -6,11 +6,10 @@ Ieee::Application.routes.draw do
   get "photos" => "photos#index", :as => "photos"
   get "users/edit" => "users#edit"
   get "calendar" => "events#calendar", :as => "calendar"
-  get "hope" => "hope#about", :as => "hope"
+  get "hope" => "hope#about", :as => "hope/about"
+  get "about" => "about#information", :as => "about/information"
 
   scope :as => :statics do
-    get 'about' => 'statics#about', :as => 'about'
-    get 'officers' => 'statics#officers', :as => 'officers'
     get 'scope' => 'statics#scope', :as => 'scope'
     get 'indrel' => 'statics#indrel', :as => 'indrel'
     get 'subscribe' => 'statics#subscribe', :as => 'subscribe'
@@ -21,6 +20,13 @@ Ieee::Application.routes.draw do
     get 'programs' => 'hope#programs', :as => 'programs'
     get 'resources' => 'hope#resources', :as => 'resources'
     get 'faq' => 'hope#faq', :as => 'faq'
+  end
+  
+  scope "about", :as => :about do
+    get 'information' => 'about#information', :as => 'information'
+	get 'officers' => 'about#officers', :as => 'officers'
+	get 'advisor' => 'about#advisor', :as => 'advisor'
+	get 'contact' => 'about#contact', :as => 'contact'
   end
 
   root :to => "users#home"
