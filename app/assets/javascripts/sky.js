@@ -1,9 +1,13 @@
 $(document).ready(function() {
   var $content = $("#content"),
       $sidebar = $("#sidebar"),
+      $embedForm = $('#mc_embed_signup'),
       slideForm = function(context, duration) {
         context.toggle(duration);
       };
+  if ($embedForm.length) {
+      slideForm($embedForm, 300);
+  }
   $("#subscribe_form")
       .on("click", 'a', function(e) {
         var $subscribeForm = $('#mc_embed_signup');
