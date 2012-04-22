@@ -1,0 +1,9 @@
+%h1 Our Advisor
+%div#about_nav
+  - %w(information officers advisor contact).each do |name|
+    = link_to name.upcase, name, :id => "about_#{name}", :class => "about_nav_link"
+
+%div#about_content
+  %h2 Vivek Subramanian
+  = link_to image_tag("vivek.jpg", :title => "Vivek Subramanian", :alt => "Vivek Subramanian", :id => "advisor_picture"), image_path("vivek.jpg")
+  The IEEE advisor is a faculty member that serves as a valuable resource between our student branch and the faculty of UC Berkeley EECS. Our current advisor is Professor Vivek Subramanian, who has been at UC Berkeley since 1998 and joined the EECS faculty in 2000. He has authored or co-authored more than 40 research publications and patents, and is a member of IEEE. Find out more about Professor Subramanian on #{link_to "his website", "http://www.eecs.berkeley.edu/~viveks/"}.

@@ -1,0 +1,9 @@
+%h1 About Us
+%div#about_nav
+  - %w(information officers advisor contact).each do |name|
+    = link_to name.upcase, name, :id => "about_#{name}", :class => "about_nav_link"
+
+%div#about_content
+  = link_to image_tag("sky/club_picture-sm.jpg", :title => "IEEE Officer Corps 2010", :alt => "IEEE Officer Corps 2010", :id => "club_picture"), image_path("sky/club_picture.jpg")
+  %p The Institute of Electrical and Electronics Engineers is an international organization with over 350,000 members. The UC Berkeley IEEE student branch was established in 1912 and is part of Region 6 (US - West) of the IEEE national branch. As one of the most active EECS student organization on campus, we aim to promote professional awareness, encourage academic growth, and organize social activities within the EECS community. Visit #{link_to "www.ieee.com", "http://www.ieee.com"} to explore one of the best websites for electrical engineers and those interested in the field.
+  %p #{link_to "Our Constitution", "ieeeconstitution.pdf"}

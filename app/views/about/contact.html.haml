@@ -1,0 +1,23 @@
+%h1 About Us
+%div#about_nav
+  - %w(information officers advisor contact).each do |name|
+    = link_to name.upcase, name, :id => "about_#{name}", :class => "about_nav_link"
+
+%div#about_content
+  %h2 Contact Information
+  %p
+    Mailing address:
+    %blockquote
+      IEEE Student Chapter
+      %br/
+      246 Cory Hall
+      %br/
+      Berkeley, CA 94720
+      %br/
+      Lab: 246 Cory Hall
+      %br/
+  %p
+    Email address:
+    %blockquote
+      = mail_to "ieee@berkeley.edu"
+

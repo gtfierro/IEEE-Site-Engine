@@ -9,7 +9,13 @@
 		$('.techops').last().css('padding-right', '0px');
 		$('.website').last().css('padding-right', '0px');
 	});
-%h1 Executives
+
+%h1 Current Officers
+%div#about_nav
+	- %w(information officers advisor contact).each do |name|
+		= link_to name.upcase, name, :id => "about_#{name}", :class => "about_nav_link"
+
+%h2 Executives
 %hr
 %br
 - @execs.each do |officer|
@@ -21,7 +27,7 @@
 			= officer[1]
 %br 
 %br 
-%h1 Activities
+%h2 Activities
 %hr
 %br
 - @activities.each do |officer|
@@ -32,7 +38,7 @@
 			- if @activities.index(officer) == 0
 				%br
 				Director
-%h1 HOPE
+%h2 HOPE
 %hr
 %br
 - @hope.each do |officer|
@@ -45,7 +51,7 @@
 				Director
 %br 
 %br
-%h1 Industrial Relations
+%h2 Industrial Relations
 %hr
 %br
 - @indrel.each do |officer|
@@ -58,7 +64,7 @@
 				Director
 %br 
 %br
-%h1 IO
+%h2 I/O
 %hr
 %br
 - @io.each do |officer|
@@ -69,7 +75,7 @@
 			- if @io.index(officer) == 0
 				%br
 				Director
-%h1 Professional Development
+%h2 Professional Development
 %hr
 %br
 - @prodev.each do |officer|
@@ -80,7 +86,7 @@
 			- if @prodev.index(officer) == 0
 				%br
 				Director
-%h1 Technical Operations
+%h2 Technical Operations
 %hr
 %br
 - @techops.each do |officer|
@@ -91,7 +97,7 @@
 			- if @techops.index(officer) == 0
 				%br
 				Director
-%h1 Website
+%h2 Website
 %hr
 %br
 - @website.each do |officer|

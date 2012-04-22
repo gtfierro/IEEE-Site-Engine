@@ -15,7 +15,7 @@
     .event
       .title_wrapper
         .title
-          = link_to e.title, event_path(e)
+          %h4= link_to e.title, event_path(e)
         .calendar
           %a{:href => "#"}
             = image_tag "sky/calendar.png", :title => "Add to Google Calendar", :alt => "Add to Google Calendar"
