@@ -6,7 +6,7 @@ $(document).ready(function() {
         context.toggle(duration);
       };
   if ($embedForm.length) {
-      slideForm($embedForm, 300);
+      $embedForm.show();
   }
   $("#subscribe_form")
       .on("click", 'a', function(e) {
