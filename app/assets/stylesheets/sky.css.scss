@@ -35,9 +35,14 @@ a {
   outline: none;
 }
 
-a img{
- border: none;
-}
+/*IE img border fix*/
+/*Remove outline for anchor tag*/
+a {outline : none;}
+/*Remove outline from image link*/
+a img {outline : none;}
+/*Remove border from image link*/
+img {border : 0;}
+
 label {
   font-size: 1.2em;
 }
