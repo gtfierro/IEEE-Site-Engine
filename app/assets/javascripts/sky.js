@@ -5,8 +5,8 @@ $(document).ready(function() {
       slideForm = function(context, duration) {
         context.toggle(duration);
       };
-  if ($embedForm.length) {
-      $embedForm.show();
+  if ($embedForm.is(':hidden')) {
+      $embedForm.toggle();
   }
   $("#subscribe_form")
       .on("click", 'a', function(e) {
@@ -14,14 +14,11 @@ $(document).ready(function() {
         // if length is 0, we have to get the form via an ajax call
         if (!$subscribeForm.length) {
           $.getScript('/subscribe', function() {
-            slideForm($('#mc_embed_signup'), 300);
+            $('#mc_embed_signup').slideDown(300);
           });
         } else {
           slideForm($subscribeForm, 300);
         }
-//        if ($subscribeForm.is(':hidden')) {
-//          slideForm($subscribeForm, 300);
-//        }
         e.preventDefault();
         e.stopPropagation();
       });
